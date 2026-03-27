@@ -194,7 +194,7 @@
       transform: scaleX(1);
     }
 
-    /* Gallery Grid - Masonry Layout */
+    /* Gallery Grid - CSS Grid Layout */
     .gallery-section {
       max-width: 1400px;
       margin: 0 auto;
@@ -202,17 +202,16 @@
     }
 
     .gallery-grid {
-      column-count: 2;
-      column-gap: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
     }
 
     .gallery-item {
       position: relative;
       overflow: hidden;
-      margin-bottom: 40px;
       background: var(--coal);
       border: 1px solid rgba(200, 169, 110, 0.1);
-      break-inside: avoid;
       cursor: pointer;
       animation: revealItem 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
       opacity: 1;
@@ -220,6 +219,19 @@
 
     .gallery-item[data-hidden="true"] {
       display: none;
+    }
+
+    /* Wide/Landscape paintings span full width */
+    .gallery-item--wide {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-item--wide .gallery-item-image img {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      background: var(--void);
     }
 
     @keyframes revealItem {
@@ -349,8 +361,8 @@
     /* Responsive Design */
     @media (max-width: 1200px) {
       .gallery-grid {
-        column-count: 2;
-        column-gap: 32px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
       }
 
       .page-hero-title {
@@ -364,7 +376,12 @@
 
     @media (max-width: 768px) {
       .gallery-grid {
-        column-count: 1;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .gallery-item--wide .gallery-item-image img {
+        max-height: 50vh;
       }
 
       .page-hero {
@@ -470,10 +487,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="life-totem">
+      <div class="gallery-item gallery-item--wide" data-series="life-totem">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/life-totem-01-sm.webp 800w, images/life-totem-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/life-totem-01-sm.webp 800w, images/life-totem-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/life-totem-01-md.webp" data-full="images/life-totem-01-lg.webp" alt="生命图腾系列 - 纸本彩墨" loading="lazy">
             </picture>
           </div>
@@ -502,10 +519,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="life-totem">
+      <div class="gallery-item gallery-item--wide" data-series="life-totem">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/life-totem-05-sm.webp 800w, images/life-totem-05-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/life-totem-05-sm.webp 800w, images/life-totem-05-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/life-totem-05-md.webp" data-full="images/life-totem-05-lg.webp" alt="生命图腾系列 - 纸本彩墨" loading="lazy">
             </picture>
           </div>
@@ -518,10 +535,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="life-totem">
+      <div class="gallery-item gallery-item--wide" data-series="life-totem">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/life-totem-06-sm.webp 800w, images/life-totem-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/life-totem-06-sm.webp 800w, images/life-totem-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/life-totem-06-md.webp" data-full="images/life-totem-06-lg.webp" alt="生命图腾系列 - 纸本水墨" loading="lazy">
             </picture>
           </div>
@@ -534,10 +551,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="life-totem">
+      <div class="gallery-item gallery-item--wide" data-series="life-totem">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/life-totem-12-sm.webp 800w, images/life-totem-12-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/life-totem-12-sm.webp 800w, images/life-totem-12-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/life-totem-12-md.webp" data-full="images/life-totem-12-lg.webp" alt="生命图腾系列 - 布面油画" loading="lazy">
             </picture>
           </div>
@@ -614,10 +631,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="life-totem">
+      <div class="gallery-item gallery-item--wide" data-series="life-totem">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/life-totem-04-sm.webp 800w, images/life-totem-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/life-totem-04-sm.webp 800w, images/life-totem-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/life-totem-04-md.webp" data-full="images/life-totem-04-lg.webp" alt="生命图腾系列 - 纸本彩墨" loading="lazy">
             </picture>
           </div>
@@ -694,10 +711,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="life-totem">
+      <div class="gallery-item gallery-item--wide" data-series="life-totem">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/life-totem-18-sm.webp 800w, images/life-totem-18-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/life-totem-18-sm.webp 800w, images/life-totem-18-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/life-totem-18-md.webp" data-full="images/life-totem-18-lg.webp" alt="生命图腾系列 - 布面油画" loading="lazy">
             </picture>
           </div>
@@ -794,10 +811,10 @@
       </div>
 
       <!-- 高地系列 Highland -->
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item gallery-item--wide" data-series="highland">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/highland-04-sm.webp 800w, images/highland-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/highland-04-sm.webp 800w, images/highland-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/highland-04-md.webp" data-full="images/highland-04-lg.webp" alt="六度 - 布面油画" loading="lazy">
             </picture>
           </div>
@@ -1005,10 +1022,10 @@
       </div>
 
       <!-- 新水墨系列 New Ink -->
-      <div class="gallery-item" data-series="new-ink">
+      <div class="gallery-item gallery-item--wide" data-series="new-ink">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/new-ink-01-sm.webp 800w, images/new-ink-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/new-ink-01-sm.webp 800w, images/new-ink-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/new-ink-01-md.webp" data-full="images/new-ink-01-lg.webp" alt="僧 - 纸本水墨" loading="lazy">
             </picture>
           </div>
@@ -1036,10 +1053,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="new-ink">
+      <div class="gallery-item gallery-item--wide" data-series="new-ink">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/new-ink-03-sm.webp 800w, images/new-ink-03-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/new-ink-03-sm.webp 800w, images/new-ink-03-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/new-ink-03-md.webp" data-full="images/new-ink-03-lg.webp" alt="白驹之后 - 纸本彩绘" loading="lazy">
             </picture>
           </div>
@@ -1166,10 +1183,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="early">
+      <div class="gallery-item gallery-item--wide" data-series="early">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/early-06-sm.webp 800w, images/early-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/early-06-sm.webp 800w, images/early-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/early-06-md.webp" data-full="images/early-06-lg.webp" alt="河那边 - 布面油画" loading="lazy">
             </picture>
           </div>
@@ -1198,10 +1215,10 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="early">
+      <div class="gallery-item gallery-item--wide" data-series="early">
         <div class="gallery-item-image">
             <picture>
-              <source type="image/webp" srcset="images/early-04-sm.webp 800w, images/early-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <source type="image/webp" srcset="images/early-04-sm.webp 800w, images/early-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
               <img src="images/early-04-md.webp" data-full="images/early-04-lg.webp" alt="征途 - 布面油画" loading="lazy">
             </picture>
           </div>
