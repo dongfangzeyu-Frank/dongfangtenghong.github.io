@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资讯图片编辑器</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', sans-serif;
+    background: #111;
+    color: #eee;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #c8a96e;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #111;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  .toolbar button {
+    padding: 10px 24px;
+    border: 1px solid #c8a96e;
+    background: transparent;
+    color: #c8a96e;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .toolbar button:hover {
+    background: #c8a96e;
+    color: #111;
+  }
+  .toolbar button.primary {
+    background: #c8a96e;
+    color: #111;
+    font-weight: bold;
+  }
+  .toolbar button.primary:hover {
+    background: #b89a5e;
+  }
+  .changed-count {
+    color: #e74c3c;
+    font-size: 14px;
+    line-height: 40px;
+  }
+
+  .section-label {
+    font-size: 18px;
+    color: #c8a96e;
+    margin: 30px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #333;
+  }
+
+  .article-card {
+    display: flex;
+    gap: 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+  }
+  .article-card.changed {
+    border-color: #e74c3c;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.2);
+  }
+  .article-card .img-area {
+    flex: 0 0 200px;
+    position: relative;
+    cursor: pointer;
+  }
+  .article-card .img-area img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+  .article-card .img-area:hover::after {
+    content: '点击更换图片';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    color: #c8a96e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  .article-card .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .article-card .info .tag {
+    font-size: 11px;
+    color: #c8a96e;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .article-card .info .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .article-card .info .source {
+    font-size: 12px;
+    color: #888;
+  }
+  .article-card .info .current-img {
+    font-size: 11px;
+    color: #666;
+    margin-top: auto;
+    font-family: monospace;
+  }
+  .article-card .info .original-img {
+    font-size: 11px;
+    color: #e74c3c;
+    font-family: monospace;
+    display: none;
+  }
+  .article-card.changed .info .original-img {
+    display: block;
+  }
+
+  /* Image Picker Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 200;
+    overflow-y: auto;
+    padding: 30px;
+  }
+  .modal-overlay.active { display: block; }
+  .modal {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .modal-header h2 {
+    font-size: 18px;
+    color: #c8a96e;
+  }
+  .modal-close {
+    background: none;
+    border: 1px solid #555;
+    color: #ccc;
+    font-size: 14px;
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .modal-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .modal-filter button {
+    padding: 6px 14px;
+    border: 1px solid #444;
+    background: transparent;
+    color: #ccc;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .modal-filter button.active {
+    border-color: #c8a96e;
+    color: #c8a96e;
+    background: rgba(200,169,110,0.1);
+  }
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .image-grid .img-option {
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .image-grid .img-option:hover {
+    border-color: #c8a96e;
+    transform: scale(1.03);
+  }
+  .image-grid .img-option.selected {
+    border-color: #27ae60;
+  }
+  .image-grid .img-option img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+  }
+  .image-grid .img-option .label {
+    font-size: 10px;
+    color: #999;
+    padding: 4px 6px;
+    text-align: center;
+    background: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Output Modal */
+  .output-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 300;
+    overflow-y: auto;
+    padding: 30px;
+  }
+  .output-overlay.active { display: block; }
+  .output-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .output-box h2 {
+    color: #c8a96e;
+    margin-bottom: 12px;
+  }
+  .output-box p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .output-box textarea {
+    width: 100%;
+    height: 400px;
+    background: #0d0d0d;
+    color: #0f0;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 12px;
+    resize: vertical;
+  }
+  .output-box .btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .output-box button {
+    padding: 10px 20px;
+    border: 1px solid #c8a96e;
+    background: transparent;
+    color: #c8a96e;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .output-box button.primary {
+    background: #c8a96e;
+    color: #111;
+    font-weight: bold;
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #27ae60;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 999;
+    display: none;
+  }
+  .toast.show { display: block; animation: fadeInOut 2s ease; }
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<h1>资讯栏目 · 图片编辑器</h1>
+<p class="subtitle">点击图片即可更换，修改完成后点击"生成代码"导出</p>
+
+<div class="toolbar">
+  <span class="changed-count" id="changedCount"></span>
+  <button onclick="resetAll()">重置全部</button>
+  <button class="primary" onclick="generateOutput()">生成代码</button>
+</div>
+
+<div id="articlesContainer"></div>
+
+<!-- Image Picker Modal -->
+<div class="modal-overlay" id="pickerModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="pickerTitle">选择图片</h2>
+      <button class="modal-close" onclick="closePicker()">关闭</button>
+    </div>
+    <div class="modal-filter" id="pickerFilter"></div>
+    <div class="image-grid" id="pickerGrid"></div>
+  </div>
+</div>
+
+<!-- Output Modal -->
+<div class="output-overlay" id="outputModal">
+  <div class="output-box">
+    <h2>修改结果</h2>
+    <p>以下是需要在 news.html 中替换的图片路径。你可以复制后手动替换，或直接下载修改后的文件。</p>
+    <textarea id="outputText" readonly></textarea>
+    <div class="btn-row">
+      <button onclick="copyOutput()">复制到剪贴板</button>
+      <button class="primary" onclick="downloadHtml()">下载修改后的 news.html</button>
+      <button onclick="closeOutput()">关闭</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// === DATA ===
+const articles = [
+  { id: 'review8', section: '学术评论', title: '静默的雷霆：东方腾弘与"东方神秘意象"', source: '东方神秘意象 · 泽宇 · 2026', img: 'images/life-totem-thunder.webp', line: 47 },
+  { id: 'review3', section: '学术评论', title: '东方腾弘的"佛心"与"童心"', source: '雅昌艺术网 · 艺术圈阅', img: 'images/highland-01.jpg', line: 63 },
+  { id: 'review1', section: '学术评论', title: '白马非马——略谈东方腾弘和他的绘画', source: '雅昌艺术网 · 像素艺术空间', img: 'images/life-totem-09.jpg', line: 79 },
+  { id: 'review2', section: '学术评论', title: '人马之缘——评东方腾弘的画马', source: '四川艺术网 · 吴永强', img: 'images/life-totem-02.jpg', line: 95 },
+  { id: 'review5', section: '学术评论', title: '东方腾弘丨悠远深邃', source: '雅昌艺术网', img: 'images/highland-05.jpg', line: 111 },
+  { id: 'review7', section: '学术评论', title: '百家丨生命图腾与神秘意象——绘画的文化阐释', source: '《现代艺术》杂志', img: 'images/life-totem-13.jpg', line: 127 },
+  { id: 'review4', section: '学术评论', title: '生命图腾——品评著名画家东方腾弘的人马之缘', source: '文化中国', img: 'images/life-totem-03.jpg', line: 143 },
+  { id: 'review6', section: '学术评论', title: '天府百年美术文献展：推出中国油画新符号', source: '雅昌艺术网 · 田旭中', img: 'images/highland-02.jpg', line: 159 },
+  { id: 'event2', section: '媒体报道与活动', title: '那个世界很宁静——东方腾弘访谈', source: '雅昌艺术网 · 2025', img: 'images/highland-07.jpg', line: 187 },
+  { id: 'event1', section: '媒体报道与活动', title: '"东方的故事，东方的马"——东方腾弘绘画作品讲述暨圆桌会议', source: '雅昌艺术网 · 2025', img: 'images/life-totem-07.jpg', line: 203 },
+  { id: 'event8', section: '媒体报道与活动', title: '卢浮宫"温度：当代艺术展"', source: '当代油画 · 吴永强 · 2023', img: 'images/life-totem-louvre.webp', line: 219 },
+  { id: 'event9', section: '媒体报道与活动', title: '"望：当代中国艺术展"——意大利罗马', source: '罗马文书院宫达芬奇博物馆 · 2022', img: 'images/roma-speranza.webp', line: 235 },
+  { id: 'event7', section: '媒体报道与活动', title: '日本福冈亚洲艺术双年展', source: '日本福冈亚洲美术馆 · 2022', img: 'images/fukuoka-museum.webp', line: 251 },
+  { id: 'event4', section: '媒体报道与活动', title: '东方腾弘的东方意象', source: '雅昌艺术网 · 2022', img: 'images/new-ink-01.jpg', line: 267 },
+  { id: 'event3', section: '媒体报道与活动', title: '三条专访——东方腾弘：艺术是真诚的自我表达', source: '雅昌艺术网', img: 'images/highland-10.jpg', line: 283 },
+  { id: 'event5', section: '媒体报道与活动', title: '巴蜀画派·名家——东方腾弘艺术人生', source: '雅昌艺术网', img: 'images/life-totem-11.jpg', line: 299 },
+  { id: 'event6', section: '媒体报道与活动', title: '艺术共享万达启航——"极限·至尊·至美"巡回展', source: '雅昌艺术网', img: 'images/highland-03.jpg', line: 315 },
+];
+
+const availableImages = [
+  // Life Totem
+  { file: 'images/life-totem-01.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-02.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-03.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-04.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-05.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-06.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-07.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-08.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-09.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-10.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-11.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-12.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-13.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-14.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-15.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-16.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-17.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-18.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-19.jpg', cat: '生命图腾' },
+  { file: 'images/life-totem-thunder.webp', cat: '生命图腾' },
+  { file: 'images/life-totem-louvre.webp', cat: '生命图腾' },
+  { file: 'images/life-totem-rome.webp', cat: '生命图腾' },
+  // Highland
+  { file: 'images/highland-01.jpg', cat: '高地' },
+  { file: 'images/highland-02.jpg', cat: '高地' },
+  { file: 'images/highland-03.jpg', cat: '高地' },
+  { file: 'images/highland-04.jpg', cat: '高地' },
+  { file: 'images/highland-05.jpg', cat: '高地' },
+  { file: 'images/highland-06.jpg', cat: '高地' },
+  { file: 'images/highland-07.jpg', cat: '高地' },
+  { file: 'images/highland-08.jpg', cat: '高地' },
+  { file: 'images/highland-09.jpg', cat: '高地' },
+  { file: 'images/highland-10.jpg', cat: '高地' },
+  { file: 'images/highland-11.jpg', cat: '高地' },
+  { file: 'images/highland-12.jpg', cat: '高地' },
+  // White Steed
+  { file: 'images/white-steed-01.jpg', cat: '白驹' },
+  { file: 'images/white-steed-02.jpg', cat: '白驹' },
+  // New Ink
+  { file: 'images/new-ink-01.jpg', cat: '新水墨' },
+  { file: 'images/new-ink-02.jpg', cat: '新水墨' },
+  { file: 'images/new-ink-03.jpg', cat: '新水墨' },
+  // Flower Season
+  { file: 'images/flower-season-01.jpg', cat: '花季' },
+  // Early
+  { file: 'images/early-01.jpg', cat: '早期' },
+  { file: 'images/early-02.jpg', cat: '早期' },
+  { file: 'images/early-03.jpg', cat: '早期' },
+  { file: 'images/early-04.jpg', cat: '早期' },
+  { file: 'images/early-05.jpg', cat: '早期' },
+  { file: 'images/early-06.jpg', cat: '早期' },
+  { file: 'images/early-07.jpg', cat: '早期' },
+  { file: 'images/early-08.jpg', cat: '早期' },
+  { file: 'images/early-09.jpg', cat: '早期' },
+  { file: 'images/early-10.jpg', cat: '早期' },
+  { file: 'images/early-11.jpg', cat: '早期' },
+  { file: 'images/early-12.jpg', cat: '早期' },
+  // Special
+  { file: 'images/roma-speranza.webp', cat: '展览' },
+  { file: 'images/fukuoka-museum.webp', cat: '展览' },
+  { file: 'images/fukuoka-biennial.webp', cat: '展览' },
+];
+
+// State
+const changes = {}; // id -> new img path
+let currentEditId = null;
+
+function getImg(article) {
+  return changes[article.id] || article.img;
+}
+
+function render() {
+  const container = document.getElementById('articlesContainer');
+  container.innerHTML = '';
+  let lastSection = '';
+
+  articles.forEach(a => {
+    if (a.section !== lastSection) {
+      lastSection = a.section;
+      const h = document.createElement('h2');
+      h.className = 'section-label';
+      h.textContent = a.section;
+      container.appendChild(h);
+    }
+    const card = document.createElement('div');
+    card.className = 'article-card' + (changes[a.id] ? ' changed' : '');
+    const currentImg = getImg(a);
+    card.innerHTML = `
+      <div class="img-area" onclick="openPicker('${a.id}')">
+        <img src="${currentImg}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%23333%22 width=%22200%22 height=%22150%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23999%22 text-anchor=%22middle%22 dy=%22.3em%22>图片缺失</text></svg>'">
+      </div>
+      <div class="info">
+        <span class="tag">${a.section}</span>
+        <span class="title">${a.title}</span>
+        <span class="source">${a.source}</span>
+        <span class="current-img">当前: ${currentImg}</span>
+        <span class="original-img">原始: ${a.img}</span>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  const count = Object.keys(changes).length;
+  document.getElementById('changedCount').textContent = count > 0 ? `已修改 ${count} 项` : '';
+}
+
+function openPicker(articleId) {
+  currentEditId = articleId;
+  const article = articles.find(a => a.id === articleId);
+  document.getElementById('pickerTitle').textContent = `为「${article.title}」选择图片`;
+
+  // Build filter buttons
+  const cats = ['全部', ...new Set(availableImages.map(i => i.cat))];
+  const filterEl = document.getElementById('pickerFilter');
+  filterEl.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.textContent = cat;
+    btn.className = cat === '全部' ? 'active' : '';
+    btn.onclick = () => {
+      filterEl.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderPickerGrid(cat === '全部' ? null : cat);
+    };
+    filterEl.appendChild(btn);
+  });
+
+  renderPickerGrid(null);
+  document.getElementById('pickerModal').classList.add('active');
+}
+
+function renderPickerGrid(filterCat) {
+  const grid = document.getElementById('pickerGrid');
+  const currentImg = getImg(articles.find(a => a.id === currentEditId));
+  grid.innerHTML = '';
+
+  const imgs = filterCat ? availableImages.filter(i => i.cat === filterCat) : availableImages;
+  imgs.forEach(imgData => {
+    const opt = document.createElement('div');
+    opt.className = 'img-option' + (imgData.file === currentImg ? ' selected' : '');
+    const shortName = imgData.file.replace('images/', '');
+    opt.innerHTML = `
+      <img src="${imgData.file}" loading="lazy" onerror="this.parentElement.style.display='none'">
+      <div class="label">${shortName}</div>
+    `;
+    opt.onclick = () => selectImage(imgData.file);
+    grid.appendChild(opt);
+  });
+}
+
+function selectImage(imgPath) {
+  const article = articles.find(a => a.id === currentEditId);
+  if (imgPath === article.img) {
+    delete changes[currentEditId];
+  } else {
+    changes[currentEditId] = imgPath;
+  }
+  closePicker();
+  render();
+  showToast('图片已更换');
+}
+
+function closePicker() {
+  document.getElementById('pickerModal').classList.remove('active');
+  currentEditId = null;
+}
+
+function resetAll() {
+  Object.keys(changes).forEach(k => delete changes[k]);
+  render();
+  showToast('已重置全部修改');
+}
+
+function generateOutput() {
+  const changedArticles = articles.filter(a => changes[a.id]);
+  if (changedArticles.length === 0) {
+    showToast('没有修改');
+    return;
+  }
+
+  let text = '=== 需要修改的图片 (共 ' + changedArticles.length + ' 处) ===\n\n';
+  changedArticles.forEach(a => {
+    text += `文章: ${a.title}\n`;
+    text += `行号: 约第 ${a.line} 行\n`;
+    text += `原图: ${a.img}\n`;
+    text += `新图: ${changes[a.id]}\n`;
+    text += `---\n`;
+  });
+
+  document.getElementById('outputText').value = text;
+  document.getElementById('outputModal').classList.add('active');
+}
+
+function copyOutput() {
+  const textarea = document.getElementById('outputText');
+  textarea.select();
+  document.execCommand('copy');
+  showToast('已复制到剪贴板');
+}
+
+async function downloadHtml() {
+  try {
+    const resp = await fetch('news.html');
+    let html = await resp.text();
+
+    articles.forEach(a => {
+      if (changes[a.id]) {
+        html = html.replace(
+          `src="${a.img}"`,
+          `src="${changes[a.id]}"`
+        );
+      }
+    });
+
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'news.html';
+    link.click();
+    URL.revokeObjectURL(url);
+    showToast('news.html 已下载');
+  } catch (e) {
+    showToast('下载失败: ' + e.message);
+  }
+}
+
+function closeOutput() {
+  document.getElementById('outputModal').classList.remove('active');
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.remove('show');
+  void toast.offsetWidth;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+// ESC to close modals
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closePicker();
+    closeOutput();
+  }
+});
+
+// Init
+render();
+</script>
+</body>
+</html>
