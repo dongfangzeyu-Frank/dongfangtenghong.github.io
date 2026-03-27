@@ -1,0 +1,32 @@
+# === Development files (keep source, deploy minified) ===
+# css/style.css
+# js/components.js
+# js/main.js
+# js/i18n.js
+
+# === Large document files (not for web) ===
+*.docx
+*.pdf
+东方腾弘官网研发方案.html
+
+# === Reference materials ===
+资料/
+2026/
+
+# === Admin page ===
+admin.html
+
+# === Unused large original images ===
+# Keep only images referenced by the website
+images/微信图片_*
+images/artwork/
+
+# === OS and editor files ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# === Node modules (if any) ===
+node_modules/

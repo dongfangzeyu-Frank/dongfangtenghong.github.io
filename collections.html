@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="东方腾弘全球收藏版图 - 作品被英国皇家艺术学院、巴黎美术学院、柏林艺术大学、泰国皇室等机构收藏。">
+    <meta name="keywords" content="东方腾弘收藏,皇家艺术学院,巴黎美术学院,柏林艺术大学,Dongfang Tenghong collections">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="收藏 - 东方腾弘">
+    <meta property="og:description" content="从成都到伦敦：全球收藏版图。">
+    <meta property="og:type" content="website">
+    <title data-i18n="collections.title">收藏 - 东方腾弘官方网站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dongfangtenghong.github.io/collections.html">
+</head>
+<body>
+    <!-- Navigation (rendered by components.js) -->
+    <div id="site-nav-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="hero hero-dark" style="min-height: 40vh;">
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="collections.hero.title">收藏 / Collections</h1>
+            <p class="hero-subtitle" data-i18n="collections.hero.subtitle">从成都到伦敦：全球收藏版图 / From Chengdu to London: A Global Collection Map</p>
+        </div>
+    </section>
+
+    <!-- Collection Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label" data-i18n="collections.stats.academic">世界顶级学府收藏</div>
+                <div class="stat-label-en" data-i18n="collections.stats.academic.en">Top Academic Collections</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">1</div>
+                <div class="stat-label" data-i18n="collections.stats.royal">皇室收藏</div>
+                <div class="stat-label-en" data-i18n="collections.stats.royal.en">Royal Collection</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label" data-i18n="collections.stats.regions">国家与地区</div>
+                <div class="stat-label-en" data-i18n="collections.stats.regions.en">Countries & Regions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section class="map-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="collections.map.title">全球收藏地图 / Global Collection Map</h2>
+        </div>
+
+        <div class="map-container">
+            <svg class="world-map" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- Simplified World Map Outline -->
+                <defs>
+                    <style>
+                        .map-outline {
+                            fill: none;
+                            stroke: #444;
+                            stroke-width: 1;
+                        }
+                        .collection-dot {
+                            fill: #d4af37;
+                            filter: url(#glow);
+                        }
+                    </style>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Continents (simplified outlines) -->
+                <g class="map-outline">
+                    <!-- North America -->
+                    <path d="M 150 120 L 200 100 L 220 150 L 200 200 L 150 180 Z"/>
+                    <!-- South America -->
+                    <path d="M 180 200 L 220 220 L 210 320 L 170 300 Z"/>
+                    <!-- Europe -->
+                    <path d="M 380 100 L 450 90 L 480 150 L 440 180 L 380 160 Z"/>
+                    <!-- Africa -->
+                    <path d="M 420 180 L 500 160 L 520 300 L 450 320 L 410 250 Z"/>
+                    <!-- Asia -->
+                    <path d="M 500 100 L 650 80 L 750 120 L 800 180 L 700 200 L 550 150 Z"/>
+                    <!-- Australia -->
+                    <path d="M 750 350 L 800 340 L 810 400 L 760 410 Z"/>
+                </g>
+
+                <!-- Collection Location Dots -->
+                <!-- London, UK (RCA) -->
+                <circle class="collection-dot" cx="400" cy="140" r="8" data-city="London">
+                    <title>Royal College of Art, London</title>
+                </circle>
+
+                <!-- Paris, France -->
+                <circle class="collection-dot" cx="410" cy="155" r="8" data-city="Paris">
+                    <title>Beaux-Arts de Paris</title>
+                </circle>
+
+                <!-- Berlin, Germany -->
+                <circle class="collection-dot" cx="440" cy="145" r="8" data-city="Berlin">
+                    <title>UdK Berlin</title>
+                </circle>
+
+                <!-- Florence, Italy -->
+                <circle class="collection-dot" cx="450" cy="165" r="8" data-city="Florence">
+                    <title>Accademia di Belle Arti di Firenze</title>
+                </circle>
+
+                <!-- Rome, Italy -->
+                <circle class="collection-dot" cx="455" cy="175" r="8" data-city="Rome">
+                    <title>Accademia di Belle Arti di Roma</title>
+                </circle>
+
+                <!-- Bangkok, Thailand -->
+                <circle class="collection-dot" cx="580" cy="250" r="8" data-city="Bangkok">
+                    <title>Thai Royal Collection & Chulalongkorn</title>
+                </circle>
+
+                <!-- New York, USA -->
+                <circle class="collection-dot" cx="220" cy="160" r="8" data-city="NewYork">
+                    <title>UNESCO Headquarters, New York</title>
+                </circle>
+
+                <!-- Chengdu, China -->
+                <circle class="collection-dot" cx="620" cy="220" r="8" data-city="Chengdu">
+                    <title>Sichuan Museum, Chengdu</title>
+                </circle>
+            </svg>
+
+            <div class="map-note" data-i18n="collections.map.note">点击光点查看收藏详情 / Click the glowing dots to view collection details</div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="collections-grid">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="collections.featured.title">主要收藏 / Featured Collections</h2>
+        </div>
+
+        <div class="collections-container">
+            <!-- Royal College of Art -->
+            <div class="collection-card">
+                <div class="card-number">01</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.rca.name">英国皇家艺术学院</h3>
+                    <p class="card-title-en" data-i18n="collections.rca.nameEn">Royal College of Art</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.rca.location">伦敦，英国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.rca.works">《生命图腾》系列</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.rca.description">世界排名第一的艺术与设计大学。RCA收藏标志着东方腾弘的艺术水准获得全球主流学术界的最高认可。</p>
+                <p class="card-description-en" data-i18n="collections.rca.descriptionEn">Ranked #1 art and design university in the world. The RCA acquisition signifies the highest level of recognition from the global academic mainstream.</p>
+            </div>
+
+            <!-- Beaux-Arts de Paris -->
+            <div class="collection-card">
+                <div class="card-number">02</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.beauxarts.name">法国巴黎高等美术学院</h3>
+                    <p class="card-title-en" data-i18n="collections.beauxarts.nameEn">Beaux-Arts de Paris</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.beauxarts.location">巴黎，法国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.beauxarts.works">《生命图腾》系列</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.beauxarts.description">创立于1648年，世界最古老的美术学院之一。德拉克洛瓦、莫奈、雷诺阿的母校。</p>
+                <p class="card-description-en" data-i18n="collections.beauxarts.descriptionEn">Founded in 1648, one of the world's oldest art academies. Alma mater of Delacroix, Monet, and Renoir.</p>
+            </div>
+
+            <!-- UdK Berlin -->
+            <div class="collection-card">
+                <div class="card-number">03</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.udk.name">德国柏林艺术大学</h3>
+                    <p class="card-title-en" data-i18n="collections.udk.nameEn">UdK Berlin</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.udk.location">柏林，德国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.udk.works">《生命图腾》系列</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.udk.description">欧洲最顶尖的艺术设计学府，致力于推动当代艺术创新与实验。</p>
+                <p class="card-description-en" data-i18n="collections.udk.descriptionEn">One of Europe's most prestigious art and design universities, dedicated to contemporary art innovation and experimentation.</p>
+            </div>
+
+            <!-- Accademia di Belle Arti di Firenze -->
+            <div class="collection-card">
+                <div class="card-number">04</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.accademiafirenze.name">意大利佛罗伦萨国立美术学院</h3>
+                    <p class="card-title-en" data-i18n="collections.accademiafirenze.nameEn">Accademia di Belle Arti di Firenze</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.accademiafirenze.location">佛罗伦萨，意大利</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.accademiafirenze.works">《生命图腾》系列</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.accademiafirenze.description">文艺复兴的摇篮，米开朗基罗的母校。</p>
+                <p class="card-description-en" data-i18n="collections.accademiafirenze.descriptionEn">The cradle of the Renaissance, alma mater of Michelangelo.</p>
+            </div>
+
+            <!-- Accademia di Belle Arti di Roma -->
+            <div class="collection-card">
+                <div class="card-number">05</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.accademia roma.name">意大利罗马美术学院</h3>
+                    <p class="card-title-en" data-i18n="collections.accademiaroma.nameEn">Accademia di Belle Arti di Roma</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.accademiaroma.location">罗马，意大利</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.accademiaroma.works">《生命图腾》系列</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.accademiaroma.description">欧洲艺术教育的重要殿堂，承续古罗马艺术传统。</p>
+                <p class="card-description-en" data-i18n="collections.accademiaroma.descriptionEn">A major temple of European art education, continuing the traditions of ancient Roman art.</p>
+            </div>
+
+            <!-- Thai Royal Collection -->
+            <div class="collection-card">
+                <div class="card-number">06</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.thai.name">泰国皇室收藏</h3>
+                    <p class="card-title-en" data-i18n="collections.thai.nameEn">Thai Royal Collection</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.thai.location">曼谷，泰国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.thai.works">精选系列</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.thai.description">东方腾弘首次进入皇室收藏。同步收入朱拉隆功大学美术馆（泰国排名第一）。</p>
+                <p class="card-description-en" data-i18n="collections.thai.descriptionEn">Dongfang Tenghong's first entry into a royal collection. Also acquired by Chulalongkorn University's art museum, Thailand's top-ranked institution.</p>
+            </div>
+
+            <!-- UNESCO Headquarters -->
+            <div class="collection-card">
+                <div class="card-number">07</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.unesco.name">联合国教科文组织总部</h3>
+                    <p class="card-title-en" data-i18n="collections.unesco.nameEn">UNESCO Headquarters</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.unesco.location">纽约，美国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2005</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.unesco.works">重要收藏</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.unesco.description">联合国文化遗产保护机构，对艺术作品进行最严格的筛选和认证。</p>
+                <p class="card-description-en" data-i18n="collections.unesco.descriptionEn">The UN's cultural heritage protection body, applying the most rigorous standards of artistic selection and authentication.</p>
+            </div>
+
+            <!-- Beijing Olympic Committee -->
+            <div class="collection-card">
+                <div class="card-number">08</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.olympics.name">北京奥运会组委会</h3>
+                    <p class="card-title-en" data-i18n="collections.olympics.nameEn">Beijing Olympic Committee</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.olympics.location">北京，中国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value">2008</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.olympics.works">《行僧》</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.olympics.description">《行僧》被制作为《中国著名画家陶艺挂盘》，作为专用国礼赠送各国领导人。</p>
+                <p class="card-description-en" data-i18n="collections.olympics.descriptionEn">"Wandering Monk" was produced as a ceramic art plaque featuring renowned Chinese painters, presented as an official state gift to world leaders.</p>
+            </div>
+
+            <!-- Sichuan Museum -->
+            <div class="collection-card">
+                <div class="card-number">09</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.sichuan.name">四川博物院</h3>
+                    <p class="card-title-en" data-i18n="collections.sichuan.nameEn">Sichuan Museum</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">地点</span>
+                        <span class="meta-value" data-i18n="collections.sichuan.location">成都，中国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年份</span>
+                        <span class="meta-value" data-i18n="collections.sichuan.year">常年收藏</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.sichuan.works">多件代表作</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.sichuan.description">蜀地文化的守护者，收藏东方腾弘在故乡的艺术成就。</p>
+                <p class="card-description-en" data-i18n="collections.sichuan.descriptionEn">Guardian of Shu culture, collecting Dongfang Tenghong's artistic achievements in his birthplace.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title" data-i18n="collections.cta.title">探索完整作品集</h2>
+            <p class="cta-subtitle" data-i18n="collections.cta.subtitle">查看所有收藏作品的详细信息与高分辨率图像</p>
+            <a href="works.html" class="cta-button" data-i18n="collections.cta.button">查看作品 / See Works</a>
+        </div>
+    </section>
+
+    <!-- Footer (rendered by components.js) -->
+    <div id="site-footer-placeholder"></div>
+
+    <!-- Styles for Collections Page -->
+    <style>
+        /* Stats Bar */
+        .stats-bar {
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 60px 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #d4af37;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label-en {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 80px;
+            background: #444;
+            margin: 0 40px;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: #0d0d0d;
+            padding: 80px 20px;
+        }
+
+        .map-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .world-map {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            margin-bottom: 30px;
+        }
+
+        .collection-dot {
+            animation: pulse-glow 2s ease-in-out infinite;
+            cursor: pointer;
+            transition: r 0.3s ease;
+        }
+
+        .collection-dot:hover {
+            r: 12;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 1;
+                filter: drop-shadow(0 0 8px #d4af37) drop-shadow(0 0 4px #d4af37);
+            }
+            50% {
+                opacity: 0.7;
+                filter: drop-shadow(0 0 12px #d4af37) drop-shadow(0 0 8px #d4af37);
+            }
+        }
+
+        .map-note {
+            text-align: center;
+            color: #999;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.95rem;
+        }
+
+        /* Collections Grid */
+        .collections-grid {
+            background: #0d0d0d;
+            padding: 80px 20px;
+        }
+
+        .collections-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .collection-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 30px;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .collection-card:hover {
+            border-top-color: #d4af37;
+            border-top-width: 3px;
+            padding-top: 28px;
+            transform: translateY(-4px);
+        }
+
+        .card-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .card-header {
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+
+        .card-title-en {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #d4af37;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .meta-label {
+            color: #999;
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 500;
+        }
+
+        .meta-value {
+            color: #d4af37;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .card-description {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin: 0 0 10px 0;
+        }
+
+        .card-description-en {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #999;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 80px 20px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .cta-subtitle {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #000;
+            padding: 14px 40px;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stats-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .stat-divider {
+                width: 60px;
+                height: 1px;
+                margin: 20px 0;
+            }
+
+            .collections-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cta-title {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+    <!-- Unified Scripts -->
+    <script src="js/components.min.js"></script>
+    <script src="js/i18n.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>

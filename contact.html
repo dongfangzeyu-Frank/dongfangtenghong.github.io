@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="联系东方腾弘 - 策展合作、收藏咨询、媒体采访。Contact Dongfang Tenghong for exhibitions, collections, and media inquiries.">
+    <meta name="keywords" content="东方腾弘,联系,策展合作,收藏咨询,Dongfang Tenghong,contact">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="联系东方腾弘 - Contact">
+    <meta property="og:description" content="策展合作、收藏咨询、媒体采访联系方式">
+    <meta property="og:type" content="website">
+    <title data-i18n="contact-title">联系 | 东方腾弘</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dongfangtenghong.github.io/contact.html">
+</head>
+<body>
+    <!-- Navigation (rendered by components.js) -->
+    <div id="site-nav-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="hero-contact">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="contact-main-title">联系 / Contact</h1>
+            <p class="hero-subtitle" data-i18n="contact-hero-subtitle">我们期待与您建立联系 / We Look Forward to Connecting With You</p>
+        </div>
+    </section>
+
+    <!-- Contact Category Selection -->
+    <section class="contact-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <!-- Curatorial Collaboration -->
+                <div class="category-card" data-category="curatorial">
+                    <div class="card-icon" data-i18n="cat-icon-curatorial">策</div>
+                    <h3 class="card-title" data-i18n="contact-cat-curatorial">策展合作 / Curatorial Collaboration</h3>
+                    <p class="card-description" data-i18n="contact-cat-curatorial-desc">美术馆、画廊、艺术博览会的展览邀请与合作 / Museum exhibitions, gallery representations, and art fair collaborations</p>
+                </div>
+
+                <!-- Collection Inquiry -->
+                <div class="category-card" data-category="collection">
+                    <div class="card-icon" data-i18n="cat-icon-collection">藏</div>
+                    <h3 class="card-title" data-i18n="contact-cat-collection">收藏咨询 / Collection Inquiry</h3>
+                    <p class="card-description" data-i18n="contact-cat-collection-desc">私人藏家、企业收藏和机构收藏的作品咨询 / Inquiries for private collectors, corporate, and institutional collections</p>
+                </div>
+
+                <!-- Media & Press -->
+                <div class="category-card" data-category="media">
+                    <div class="card-icon" data-i18n="cat-icon-media">媒</div>
+                    <h3 class="card-title" data-i18n="contact-cat-media">媒体采访 / Media & Press</h3>
+                    <p class="card-description" data-i18n="contact-cat-media-desc">杂志、电视、网络媒体的采访与资料获取 / Interview and press kit inquiries from media outlets</p>
+                </div>
+
+                <!-- General Inquiry -->
+                <div class="category-card" data-category="general">
+                    <div class="card-icon" data-i18n="cat-icon-general">通</div>
+                    <h3 class="card-title" data-i18n="contact-cat-general">通用联系 / General Inquiry</h3>
+                    <p class="card-description" data-i18n="contact-cat-general-desc">学术交流、活动邀请及其他合作 / Academic exchange, event invitations, and other inquiries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <form class="contact-form" id="contactForm">
+                <div class="form-header">
+                    <h2 class="form-title" data-i18n="contact-form-title">联系表单 / Contact Form</h2>
+                    <p class="form-subtitle" data-i18n="contact-form-subtitle">请选择您的咨询类别并填写相应表单 / Please select your inquiry type and complete the form</p>
+                </div>
+
+                <!-- Common Fields -->
+                <div class="form-group">
+                    <label for="name" data-i18n="form-name-label">姓名 / Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-i18n="form-email-label">邮箱 / Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="organization" data-i18n="form-organization-label">机构/组织 / Organization</label>
+                    <input type="text" id="organization" name="organization" class="form-input">
+                </div>
+
+                <!-- Curatorial-Specific Fields -->
+                <div class="form-group form-group-curatorial" style="display: none;" data-category="curatorial">
+                    <label for="exhibition-date" data-i18n="form-exhibition-date-label">展览时间 / Exhibition Date</label>
+                    <input type="text" id="exhibition-date" name="exhibition-date" class="form-input" placeholder="e.g., 2024年6月-8月 / June - August 2024">
+                </div>
+
+                <div class="form-group form-group-curatorial" style="display: none;" data-category="curatorial">
+                    <label for="venue" data-i18n="form-venue-label">展览场地 / Venue</label>
+                    <input type="text" id="venue" name="venue" class="form-input" placeholder="e.g., 798艺术区 / 798 Art District">
+                </div>
+
+                <!-- Collection-Specific Fields -->
+                <div class="form-group form-group-collection" style="display: none;" data-category="collection">
+                    <label for="series-interest" data-i18n="form-series-interest-label">感兴趣的系列 / Series of Interest</label>
+                    <select id="series-interest" name="series-interest" class="form-input">
+                        <option value="">-- 请选择 / Please select --</option>
+                        <option value="life-totem" data-i18n="series-life-totem">生命图腾</option>
+                        <option value="white-steed" data-i18n="series-white-steed">白驹</option>
+                        <option value="wandering-monk" data-i18n="series-wandering-monk">行僧</option>
+                        <option value="highlands" data-i18n="series-highlands">高地</option>
+                        <option value="other" data-i18n="series-other">其他 / Other</option>
+                    </select>
+                </div>
+
+                <!-- Media-Specific Fields -->
+                <div class="form-group form-group-media" style="display: none;" data-category="media">
+                    <label for="media-name" data-i18n="form-media-name-label">媒体名称 / Media Name</label>
+                    <input type="text" id="media-name" name="media-name" class="form-input" placeholder="e.g., 艺术中国 / Art China">
+                </div>
+
+                <div class="form-group form-group-media" style="display: none;" data-category="media">
+                    <label for="deadline" data-i18n="form-deadline-label">截稿日期 / Deadline</label>
+                    <input type="text" id="deadline" name="deadline" class="form-input" placeholder="e.g., 2024年5月15日 / May 15, 2024">
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message" data-i18n="form-message-label">留言 / Message</label>
+                    <textarea id="message" name="message" class="form-textarea" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit" class="btn-submit" data-i18n="form-submit-button">发送 / Send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Direct Contact Section -->
+    <section class="direct-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Direct Contact Column -->
+                <div class="contact-column">
+                    <h2 class="contact-heading" data-i18n="contact-direct-heading">即时联系 / Direct Contact</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon email-icon">✉</span>
+                            <div class="contact-details">
+                                <p class="contact-label" data-i18n="contact-email-label">电子邮件 / Email</p>
+                                <a href="mailto:dongfangzeyu@gmail.com" class="contact-value">dongfangzeyu@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon whatsapp-icon">📞</span>
+                            <div class="contact-details">
+                                <p class="contact-label" data-i18n="contact-whatsapp-label">电话</p>
+                                <a href="tel:+8613800138888" class="contact-value" data-i18n="contact-whatsapp-number">+86 138 0013 8888</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item contact-item--wechat">
+                            <span class="contact-icon wechat-icon">微</span>
+                            <div class="contact-details">
+                                <p class="contact-label" data-i18n="contact-wechat-label">WeChat / 微信</p>
+                                <div class="wechat-qr-wrapper">
+                                    <img src="images/wechat-qr.png" alt="微信二维码 / WeChat QR Code" class="wechat-qr-image">
+                                    <p class="wechat-qr-hint" data-i18n="contact-qr-placeholder">扫码添加 / Scan QR Code</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media Kit Column -->
+                <div class="contact-column">
+                    <h2 class="contact-heading" data-i18n="contact-media-kit-heading">媒体资料 / Media Kit</h2>
+                    <div class="media-kit-content">
+                        <h3 class="media-kit-title" data-i18n="contact-media-kit-title">下载媒体资料包 / Download Media Kit</h3>
+                        <p class="media-kit-description" data-i18n="contact-media-kit-description">包含艺术家高清照片、代表作图片、完整简历（中/英）、艺术评论节选 / Includes high-resolution artist photos, representative works, complete biography (CN/EN), and selected critical essays</p>
+                        <a href="#" class="btn-download" data-i18n="contact-download-button">下载媒体资料 / Download Media Kit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map/Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-content">
+                <h2 class="location-title" data-i18n="contact-location-title">工作室位于中国·成都 / Studio based in Chengdu, China</h2>
+                <div class="map-placeholder">
+                    <p data-i18n="contact-map-placeholder">地图即将上线 / Map coming soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (rendered by components.js) -->
+    <div id="site-footer-placeholder"></div>
+
+    <!-- Unified Scripts -->
+    <script src="js/components.min.js"></script>
+    <script src="js/i18n.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>
