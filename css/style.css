@@ -3160,7 +3160,7 @@ select.form-input {
   margin-top: var(--space-xl);
 }
 
-.gallery-item {
+.photo-gallery .gallery-item {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -3168,12 +3168,12 @@ select.form-input {
   cursor: pointer;
 }
 
-.gallery-item--wide {
+.photo-gallery .gallery-item--wide {
   grid-column: span 2;
   aspect-ratio: 16 / 10;
 }
 
-.gallery-item img {
+.photo-gallery .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -3182,7 +3182,7 @@ select.form-input {
   filter: brightness(0.9);
 }
 
-.gallery-item:hover img {
+.photo-gallery .gallery-item:hover img {
   transform: scale(1.05);
   filter: brightness(1);
 }
@@ -3202,7 +3202,7 @@ select.form-input {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.gallery-item:hover .gallery-caption {
+.photo-gallery .gallery-item:hover .gallery-caption {
   opacity: 1;
   transform: translateY(0);
 }
@@ -3217,7 +3217,7 @@ select.form-input {
   .photo-gallery {
     grid-template-columns: 1fr;
   }
-  .gallery-item--wide {
+  .photo-gallery .gallery-item--wide {
     grid-column: span 1;
     aspect-ratio: 16 / 10;
   }
