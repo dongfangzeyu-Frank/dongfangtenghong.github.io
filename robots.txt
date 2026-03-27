@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dongfangtenghong.github.io/sitemap.xml
+Sitemap: https://dongfangtenghong.com/sitemap.xml
 
 # Block admin page
 Disallow: /admin.html
