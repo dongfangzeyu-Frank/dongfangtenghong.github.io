@@ -599,16 +599,19 @@ a:hover {
     flex-direction: column;
     gap: 0;
     background-color: rgba(0, 0, 0, 0.95);
-    padding: var(--space-2xl) 0;
-    border-bottom: 1px solid rgba(200, 169, 110, 0.1);
+    padding: 0;
+    border-bottom: none;
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--duration-normal) var(--ease-smooth);
+    transition: max-height var(--duration-normal) var(--ease-smooth),
+                padding var(--duration-normal) var(--ease-smooth);
   }
 
   .nav-menu.active,
   .nav-links.active {
     max-height: 400px;
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.1);
   }
 
   .nav-menu li,
