@@ -151,7 +151,7 @@ const i18nData = {
     // ========== EXHIBITIONS PAGE ==========
     exhibitions_title: "展览 | 东方腾弘官方网站",
     exhibitions_hero_title: "展览",
-    exhibitions_hero_subtitle: "横跨四十年的艺术足迹",
+    exhibitions_hero_subtitle: "近半个世纪的艺术探索与呈现",
     stats_exhibitions: "展览",
     stats_countries: "国家",
     stats_years: "跨越年份",
@@ -583,7 +583,7 @@ const i18nData = {
     // ========== EXHIBITIONS PAGE ==========
     exhibitions_title: "Exhibitions | Dongfang Tenghong",
     exhibitions_hero_title: "Exhibitions",
-    exhibitions_hero_subtitle: "Forty Years of Artistic Footprints",
+    exhibitions_hero_subtitle: "Nearly Half a Century of Artistic Exploration",
     stats_exhibitions: "Exhibitions",
     stats_countries: "Countries",
     stats_years: "Years Spanned",
