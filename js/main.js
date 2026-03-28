@@ -409,30 +409,49 @@ function initGalleryFiltering() {
 
   if (!filterButtons.length || !galleryItems.length) return;
 
+  // Apply filter by value
+  function applyFilter(filterValue) {
+    filterButtons.forEach(btn => {
+      if (btn.getAttribute('data-filter') === filterValue) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    galleryItems.forEach(item => {
+      const itemSeries = item.getAttribute('data-series');
+
+      if (filterValue === 'all' || itemSeries === filterValue) {
+        item.style.display = '';
+        item.setAttribute('data-hidden', 'false');
+        item.classList.add('visible');
+      } else {
+        item.style.display = 'none';
+        item.setAttribute('data-hidden', 'true');
+        item.classList.remove('visible');
+      }
+    });
+  }
+
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       const filterValue = button.getAttribute('data-filter');
-
-      // Single-select: remove active from all, then set on clicked
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      // Filter items
-      galleryItems.forEach(item => {
-        const itemSeries = item.getAttribute('data-series');
-
-        if (filterValue === 'all' || itemSeries === filterValue) {
-          item.style.display = '';
-          item.setAttribute('data-hidden', 'false');
-          item.classList.add('visible');
-        } else {
-          item.style.display = 'none';
-          item.setAttribute('data-hidden', 'true');
-          item.classList.remove('visible');
-        }
-      });
+      applyFilter(filterValue);
     });
   });
+
+  // Auto-filter from URL parameter ?series=xxx
+  const urlParams = new URLSearchParams(window.location.search);
+  const seriesParam = urlParams.get('series');
+  if (seriesParam) {
+    applyFilter(seriesParam);
+    // Scroll to the gallery section
+    const filterBar = document.querySelector('.filter-bar');
+    if (filterBar) {
+      setTimeout(() => { filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+    }
+  }
 }
 
 // ============================================================================
