@@ -1789,6 +1789,7 @@ a:hover {
 
 /* Panoramic Scroll Painting — full-width horizontal display */
 .gallery-item--panoramic {
+  grid-column: 1 / -1;
   column-span: all;
   margin: var(--space-3xl) 0;
   overflow: hidden;
