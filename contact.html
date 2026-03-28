@@ -69,11 +69,16 @@
     <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="container">
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/dongfangzeyu@gmail.com" method="POST">
                 <div class="form-header">
                     <h2 class="form-title" data-i18n="contact-form-title">联系表单 / Contact Form</h2>
                     <p class="form-subtitle" data-i18n="contact-form-subtitle">请选择您的咨询类别并填写相应表单 / Please select your inquiry type and complete the form</p>
                 </div>
+
+                <input type="hidden" name="_subject" value="东方腾弘官网 - 新联系表单提交">
+                <input type="hidden" name="_next" value="https://dongfangtenghong.com/contact.html">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="text" name="_honey" style="display:none">
 
                 <!-- Common Fields -->
                 <div class="form-group">
@@ -182,20 +187,8 @@
                     <div class="media-kit-content">
                         <h3 class="media-kit-title" data-i18n="contact-media-kit-title">下载媒体资料包 / Download Media Kit</h3>
                         <p class="media-kit-description" data-i18n="contact-media-kit-description">包含艺术家高清照片、代表作图片、完整简历（中/英）、艺术评论节选 / Includes high-resolution artist photos, representative works, complete biography (CN/EN), and selected critical essays</p>
-                        <a href="#" class="btn-download" data-i18n="contact-download-button">下载媒体资料 / Download Media Kit</a>
+                        <a href="downloads/dongfang-tenghong-media-kit.zip" class="btn-download" download data-i18n="contact-download-button">下载媒体资料 / Download Media Kit</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map/Location Section -->
-    <section class="location-section">
-        <div class="container">
-            <div class="location-content">
-                <h2 class="location-title" data-i18n="contact-location-title">工作室位于中国·成都 / Studio based in Chengdu, China</h2>
-                <div class="map-placeholder">
-                    <p data-i18n="contact-map-placeholder">地图即将上线 / Map coming soon</p>
                 </div>
             </div>
         </div>

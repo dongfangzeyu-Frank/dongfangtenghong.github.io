@@ -136,13 +136,15 @@ function renderNav(activePage) {
         `<li><a href="${item.href}" class="${activePage === item.key ? 'active' : ''}" data-i18n="nav_${item.key}">${item.label}</a></li>`
     ).join('\n                    ');
 
-    // Build language toggle: 中 / EN / ES / 日 / 한 / FR
-    const zhClass = currentLang === 'zh' ? 'active' : '';
-    const enClass = currentLang === 'en' ? 'active' : '';
-    const esClass = currentLang === 'es' ? 'active' : '';
-    const jaClass = currentLang === 'ja' ? 'active' : '';
-    const koClass = currentLang === 'ko' ? 'active' : '';
-    const frClass = currentLang === 'fr' ? 'active' : '';
+    // Build language dropdown
+    var langLabels = {zh:'中文', en:'EN', es:'ES', ja:'日本語', ko:'한국어', fr:'FR'};
+    var langFull = {zh:'中文', en:'English', es:'Español', ja:'日本語', ko:'한국어', fr:'Français'};
+    var currentLabel = langLabels[currentLang] || '中文';
+    var langs = ['zh','en','es','ja','ko','fr'];
+    var dropdownItems = langs.map(function(lang) {
+        var cls = lang === currentLang ? 'lang-btn active' : 'lang-btn';
+        return '<a href="' + getLangSwitchURL(lang) + '" class="' + cls + '" aria-label="' + langFull[lang] + '">' + langFull[lang] + '</a>';
+    }).join('\n                            ');
 
     const navHTML = `
         <nav class="site-nav" role="navigation" aria-label="Main navigation">
@@ -155,17 +157,12 @@ function renderNav(activePage) {
                 </ul>
                 <div class="nav-controls">
                     <div class="language-toggle" id="languageToggle">
-                        <a href="${getLangSwitchURL('zh')}" class="lang-btn ${zhClass}" aria-label="中文">中</a>
-                        <span class="lang-divider">/</span>
-                        <a href="${getLangSwitchURL('en')}" class="lang-btn ${enClass}" aria-label="English">EN</a>
-                        <span class="lang-divider">/</span>
-                        <a href="${getLangSwitchURL('es')}" class="lang-btn ${esClass}" aria-label="Español">ES</a>
-                        <span class="lang-divider">/</span>
-                        <a href="${getLangSwitchURL('ja')}" class="lang-btn ${jaClass}" aria-label="日本語">日</a>
-                        <span class="lang-divider">/</span>
-                        <a href="${getLangSwitchURL('ko')}" class="lang-btn ${koClass}" aria-label="한국어">한</a>
-                        <span class="lang-divider">/</span>
-                        <a href="${getLangSwitchURL('fr')}" class="lang-btn ${frClass}" aria-label="Français">FR</a>
+                        <button class="lang-current" aria-expanded="false" aria-haspopup="true">
+                            ${currentLabel} <span class="lang-arrow">▼</span>
+                        </button>
+                        <div class="lang-dropdown" role="menu">
+                            ${dropdownItems}
+                        </div>
                     </div>
                     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
                         <span></span>
@@ -227,7 +224,7 @@ function renderFooter() {
 }
 
 /**
- * Setup mobile hamburger menu functionality
+ * Setup mobile hamburger menu and language dropdown
  */
 function setupMobileMenu() {
     const hamburger = document.getElementById('hamburger');
@@ -250,6 +247,28 @@ function setupMobileMenu() {
             navMenu.classList.remove('active');
         });
     });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('languageToggle');
+    if (langToggle) {
+        const langBtn = langToggle.querySelector('.lang-current');
+        if (langBtn) {
+            langBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langToggle.classList.toggle('open');
+                var expanded = langToggle.classList.contains('open');
+                langBtn.setAttribute('aria-expanded', expanded);
+            });
+        }
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langToggle.contains(e.target)) {
+                langToggle.classList.remove('open');
+                var btn = langToggle.querySelector('.lang-current');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 }
 
 // Auto-initialize on page load
