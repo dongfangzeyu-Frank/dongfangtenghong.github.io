@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="东方腾弘作品 - 生命图腾、白驹、行僧、高地四大系列。Works by Dongfang Tenghong.">
-  <meta name="keywords" content="东方腾弘作品,生命图腾,白驹系列,行僧系列,高地系列,Dongfang Tenghong works">
+  <meta name="description" content="东方腾弘作品 - 生命图腾、高地白驹、行僧系列。Works by Dongfang Tenghong.">
+  <meta name="keywords" content="东方腾弘作品,生命图腾,高地白驹系列,行僧系列,Dongfang Tenghong works">
 
   <!-- Open Graph -->
   <meta property="og:title" content="作品 - 东方腾弘">
-  <meta property="og:description" content="生命图腾、白驹、行僧、高地四大系列作品">
+  <meta property="og:description" content="生命图腾、高地白驹、行僧系列作品">
   <meta property="og:type" content="website">
 
   <title data-i18n="page-title-works">作品 | 东方腾弘</title>
@@ -210,11 +210,12 @@
     .gallery-item {
       position: relative;
       overflow: hidden;
-      background: var(--coal);
-      border: 1px solid rgba(200, 169, 110, 0.1);
+      background: transparent;
+      border: none;
       cursor: pointer;
       animation: revealItem 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
       opacity: 1;
+      aspect-ratio: auto;
     }
 
     .gallery-item[data-hidden="true"] {
@@ -224,14 +225,15 @@
     /* Wide/Landscape paintings span full width */
     .gallery-item--wide {
       grid-column: 1 / -1;
+      min-height: 400px;
     }
 
     .gallery-item--wide .gallery-item-image img {
       width: 100%;
-      height: auto;
+      height: 100%;
       max-height: 70vh;
       object-fit: contain;
-      background: var(--void);
+      background: transparent;
     }
 
     @keyframes revealItem {
@@ -242,14 +244,17 @@
     .gallery-item-image {
       position: relative;
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
+      background: transparent;
     }
 
     .gallery-item-image img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
+      object-fit: contain;
+      background: transparent;
       transition: transform 0.6s var(--ease-smooth), filter 0.6s var(--ease-smooth);
     }
 
@@ -472,8 +477,7 @@
       <div class="filter-tabs" id="filter-tabs">
         <button class="filter-tab active" data-filter="all" data-i18n="filter-all">全部 All</button>
         <button class="filter-tab" data-filter="life-totem" data-i18n="filter-life-totem">生命图腾 Life Totem</button>
-        <button class="filter-tab" data-filter="white-steed" data-i18n="filter-white-steed">白驹 White Steed</button>
-        <button class="filter-tab" data-filter="highland" data-i18n="filter-highland">高地 Highland</button>
+        <button class="filter-tab" data-filter="highland-steed" data-i18n="filter-highland-steed">高地白驹 Highland & White Steed</button>
         <button class="filter-tab" data-filter="flower-season" data-i18n="filter-flower-season">花季 Flower Season</button>
         <button class="filter-tab" data-filter="new-ink" data-i18n="filter-new-ink">新水墨 New Ink</button>
         <button class="filter-tab" data-filter="early" data-i18n="filter-early">早期 Early Works</button>
@@ -792,7 +796,7 @@
       </div>
 
       <!-- 白驹系列 White Steed -->
-      <div class="gallery-item" data-series="white-steed">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/white-steed-02-sm.webp 800w, images/white-steed-02-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -808,7 +812,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="white-steed">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/white-steed-01-sm.webp 800w, images/white-steed-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -826,7 +830,7 @@
       </div>
 
       <!-- 高地系列 Highland -->
-      <div class="gallery-item gallery-item--wide" data-series="highland">
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-04-sm.webp 800w, images/highland-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
@@ -843,7 +847,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-12-sm.webp 800w, images/highland-12-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -858,7 +862,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-01-sm.webp 800w, images/highland-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -874,7 +878,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-06-sm.webp 800w, images/highland-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -890,7 +894,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-08-sm.webp 800w, images/highland-08-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -906,7 +910,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-05-sm.webp 800w, images/highland-05-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -922,7 +926,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item gallery-item--wide" data-series="highland">
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-11-sm.webp 800w, images/highland-11-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
@@ -938,7 +942,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item gallery-item--wide" data-series="highland">
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-07-sm.webp 800w, images/highland-07-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
@@ -954,7 +958,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item gallery-item--wide" data-series="highland">
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-10-sm.webp 800w, images/highland-10-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
@@ -970,7 +974,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item gallery-item--wide" data-series="highland">
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-03-sm.webp 800w, images/highland-03-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
@@ -986,7 +990,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-09-sm.webp 800w, images/highland-09-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -1002,7 +1006,7 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-series="highland">
+      <div class="gallery-item" data-series="highland-steed">
         <div class="gallery-item-image">
             <picture>
               <source type="image/webp" srcset="images/highland-02-sm.webp 800w, images/highland-02-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">

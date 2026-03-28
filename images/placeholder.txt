@@ -1,0 +1,8 @@
+This folder contains the following images:
+
+1. hero-bg.jpg - Hero background image
+2. artwork1.jpg to artwork6.jpg - Gallery artwork images
+3. artist.jpg - Artist portrait
+4. exhibition1.jpg to exhibition3.jpg - Exhibition images
+
+For a production website, replace these with high-quality professional photographs. 
