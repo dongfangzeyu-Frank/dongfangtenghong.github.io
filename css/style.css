@@ -2935,7 +2935,7 @@ select.form-input {
 
 /* Horizontal exhibition highlights layout */
 .highlights-grid.highlights-grid--horizontal {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   gap: 2px;
   grid-template-columns: none;
