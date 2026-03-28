@@ -1746,6 +1746,70 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
+/* Paired gallery items (two vertical works side by side) */
+.gallery-item--pair {
+  break-inside: avoid;
+  margin-bottom: 40px;
+}
+
+.gallery-pair {
+  display: flex;
+  gap: 12px;
+}
+
+.gallery-pair-item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-pair-item .gallery-item-image {
+  width: 100%;
+  display: block;
+  filter: brightness(0.75);
+  transition: transform 1.2s var(--ease-smooth), filter 0.5s var(--ease-smooth);
+}
+
+.gallery-pair-item .gallery-item-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-pair-item:hover .gallery-item-image {
+  transform: scale(1.03);
+  filter: brightness(0.9);
+}
+
+.gallery-pair-info {
+  padding: 10px 4px 0;
+  text-align: center;
+}
+
+.gallery-pair-info .gallery-item-title {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.gallery-pair-info .gallery-item-year {
+  font-family: var(--font-label);
+  font-size: 11px;
+  color: var(--gold-dim);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+  .gallery-pair {
+    gap: 8px;
+  }
+  .gallery-pair-info .gallery-item-title {
+    font-size: 12px;
+  }
+}
+
 /* ============================================================================
    LIGHTBOX
    ============================================================================ */
