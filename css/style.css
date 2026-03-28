@@ -2934,10 +2934,11 @@ select.form-input {
 }
 
 /* Horizontal exhibition highlights layout */
-.highlights-grid--horizontal {
+.highlights-grid.highlights-grid--horizontal {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  grid-template-columns: none;
 }
 
 .highlight-card--horizontal {
