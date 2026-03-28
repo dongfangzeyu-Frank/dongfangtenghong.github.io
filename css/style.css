@@ -2684,31 +2684,34 @@ select.form-input {
 /* Collections Grid */
 .collections-container {
   padding: var(--space-3xl) 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (max-width: 900px) {
-  .collections-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .collections-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 .collection-card {
+  flex: 0 0 calc(33.333% - 2px);
+  box-sizing: border-box;
   background-color: var(--coal);
   padding: var(--space-2xl);
   border-left: 2px solid transparent;
   transition: border-color var(--duration-normal) var(--ease-smooth);
+}
+
+@media (max-width: 900px) {
+  .collection-card {
+    flex: 0 0 calc(50% - 2px);
+  }
+}
+
+@media (max-width: 600px) {
+  .collection-card {
+    flex: 0 0 100%;
+  }
 }
 
 .collection-card:hover {
