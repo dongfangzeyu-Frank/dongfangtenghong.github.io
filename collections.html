@@ -59,89 +59,141 @@
             <h2 class="section-title" data-i18n="collections.map.title">全球收藏地图 / Global Collection Map</h2>
         </div>
 
-        <div class="map-container">
-            <svg class="world-map" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
-                <!-- Simplified World Map Outline -->
+        <div class="map-container" id="mapContainer">
+            <svg class="world-map" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <style>
-                        .map-outline {
-                            fill: none;
-                            stroke: #444;
-                            stroke-width: 1;
-                        }
-                        .collection-dot {
-                            fill: #d4af37;
-                            filter: url(#glow);
-                        }
-                    </style>
                     <filter id="glow">
-                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feGaussianBlur stdDeviation="4" result="blur"/>
                         <feMerge>
-                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="blur"/>
                             <feMergeNode in="SourceGraphic"/>
                         </feMerge>
                     </filter>
+                    <filter id="glow-strong">
+                        <feGaussianBlur stdDeviation="6" result="blur"/>
+                        <feFlood flood-color="#d4af37" flood-opacity="0.4" result="color"/>
+                        <feComposite in="color" in2="blur" operator="in" result="colorBlur"/>
+                        <feMerge>
+                            <feMergeNode in="colorBlur"/>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <radialGradient id="dotGrad" cx="40%" cy="40%">
+                        <stop offset="0%" stop-color="#f5d97a"/>
+                        <stop offset="100%" stop-color="#d4af37"/>
+                    </radialGradient>
                 </defs>
 
-                <!-- Continents (simplified outlines) -->
-                <g class="map-outline">
+                <!-- Realistic continent outlines (filled) -->
+                <g class="continents">
                     <!-- North America -->
-                    <path d="M 150 120 L 200 100 L 220 150 L 200 200 L 150 180 Z"/>
+                    <path d="M100,55 L115,48 L140,42 L165,50 L185,55 L210,65 L225,78 L235,95 L240,115 L245,130 L250,145 L248,160 L240,175 L230,185 L215,195 L195,200 L180,195 L160,205 L145,215 L130,210 L120,200 L105,185 L100,175 L95,160 L88,145 L85,120 L88,100 L92,80 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Central America & Caribbean -->
+                    <path d="M160,205 L175,210 L190,220 L200,230 L210,235 L205,240 L195,238 L180,230 L165,220 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
                     <!-- South America -->
-                    <path d="M 180 200 L 220 220 L 210 320 L 170 300 Z"/>
+                    <path d="M205,240 L220,235 L240,240 L258,255 L270,275 L278,300 L275,330 L268,355 L255,375 L240,390 L225,395 L215,385 L210,365 L205,340 L200,310 L195,285 L198,260 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
                     <!-- Europe -->
-                    <path d="M 380 100 L 450 90 L 480 150 L 440 180 L 380 160 Z"/>
+                    <path d="M430,60 L445,55 L460,58 L475,65 L488,70 L498,80 L505,95 L500,108 L492,118 L480,125 L468,132 L455,138 L445,142 L435,138 L425,130 L418,120 L415,108 L418,95 L422,80 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Iberian + Med -->
+                    <path d="M418,120 L425,130 L420,142 L412,148 L405,145 L400,135 L405,125 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Scandinavia -->
+                    <path d="M448,30 L455,25 L468,28 L475,38 L478,52 L475,65 L460,58 L452,45 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
                     <!-- Africa -->
-                    <path d="M 420 180 L 500 160 L 520 300 L 450 320 L 410 250 Z"/>
-                    <!-- Asia -->
-                    <path d="M 500 100 L 650 80 L 750 120 L 800 180 L 700 200 L 550 150 Z"/>
+                    <path d="M420,155 L440,148 L465,145 L490,150 L510,160 L525,175 L535,195 L540,220 L538,250 L530,280 L518,310 L505,335 L488,355 L470,365 L455,362 L442,350 L435,330 L430,305 L425,280 L420,255 L418,230 L415,205 L415,180 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Middle East -->
+                    <path d="M505,108 L525,105 L548,112 L560,125 L555,140 L542,148 L525,155 L510,160 L498,155 L492,145 L490,135 L492,118 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Russia / Central Asia -->
+                    <path d="M498,80 L530,68 L570,55 L620,45 L670,40 L720,42 L760,50 L780,60 L790,75 L785,90 L770,100 L748,108 L720,112 L680,110 L640,105 L600,100 L560,95 L530,90 L510,88 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- South Asia / India -->
+                    <path d="M600,130 L625,125 L648,130 L660,145 L665,165 L658,185 L645,200 L628,210 L612,205 L600,195 L592,180 L588,160 L590,145 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Southeast Asia -->
+                    <path d="M660,175 L680,170 L700,180 L715,195 L720,215 L712,230 L695,238 L678,235 L665,225 L658,210 L655,195 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- East Asia / China -->
+                    <path d="M660,90 L690,85 L720,88 L748,95 L770,100 L778,115 L775,130 L765,145 L748,155 L728,162 L710,165 L692,160 L678,150 L668,138 L660,125 L655,108 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Japan / Korea -->
+                    <path d="M778,100 L790,95 L798,102 L800,115 L795,128 L785,135 L778,130 L775,118 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Indonesia -->
+                    <path d="M700,248 L720,242 L745,245 L765,252 L780,260 L775,270 L758,272 L735,268 L715,262 L705,255 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
                     <!-- Australia -->
-                    <path d="M 750 350 L 800 340 L 810 400 L 760 410 Z"/>
+                    <path d="M755,320 L785,310 L815,312 L840,320 L858,335 L865,355 L858,375 L842,390 L820,398 L795,400 L772,395 L755,382 L748,365 L748,345 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- New Zealand -->
+                    <path d="M880,380 L888,375 L895,382 L892,395 L885,400 L878,395 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Greenland -->
+                    <path d="M290,20 L320,15 L345,22 L355,38 L348,55 L330,62 L310,58 L295,48 L288,35 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
                 </g>
 
-                <!-- Collection Location Dots -->
-                <!-- London, UK (RCA) -->
-                <circle class="collection-dot" cx="400" cy="140" r="8" data-city="London">
-                    <title>Royal College of Art, London</title>
-                </circle>
+                <!-- Connection arcs from Chengdu to collection cities -->
+                <g class="connections" opacity="0.15">
+                    <path d="M688,138 Q550,60 452,98" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q560,55 438,108" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q580,50 468,95" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q560,70 448,128" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q560,75 455,138" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q688,200 680,215" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q450,100 230,145" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q690,105 790,108" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                </g>
 
-                <!-- Paris, France -->
-                <circle class="collection-dot" cx="410" cy="155" r="8" data-city="Paris">
-                    <title>Beaux-Arts de Paris</title>
-                </circle>
+                <!-- Pulse rings (decorative) -->
+                <g class="pulse-rings">
+                    <circle cx="688" cy="138" r="15" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3">
+                        <animate attributeName="r" values="15;40;15" dur="4s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="688" cy="138" r="15" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3">
+                        <animate attributeName="r" values="15;40;15" dur="4s" begin="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" begin="2s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
 
-                <!-- Berlin, Germany -->
-                <circle class="collection-dot" cx="440" cy="145" r="8" data-city="Berlin">
-                    <title>UdK Berlin</title>
-                </circle>
+                <!-- Collection dots with outer ring -->
+                <g class="collection-dots">
+                    <!-- London, UK (RCA) -->
+                    <circle cx="452" cy="98" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="452" cy="98" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="London" data-label="Royal College of Art · 伦敦"/>
 
-                <!-- Florence, Italy -->
-                <circle class="collection-dot" cx="450" cy="165" r="8" data-city="Florence">
-                    <title>Accademia di Belle Arti di Firenze</title>
-                </circle>
+                    <!-- Paris, France -->
+                    <circle cx="438" cy="108" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="438" cy="108" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Paris" data-label="Beaux-Arts de Paris · 巴黎"/>
 
-                <!-- Rome, Italy -->
-                <circle class="collection-dot" cx="455" cy="175" r="8" data-city="Rome">
-                    <title>Accademia di Belle Arti di Roma</title>
-                </circle>
+                    <!-- Berlin, Germany -->
+                    <circle cx="468" cy="95" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="468" cy="95" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Berlin" data-label="UdK Berlin · 柏林"/>
 
-                <!-- Bangkok, Thailand -->
-                <circle class="collection-dot" cx="580" cy="250" r="8" data-city="Bangkok">
-                    <title>Thai Royal Collection & Chulalongkorn</title>
-                </circle>
+                    <!-- Florence, Italy -->
+                    <circle cx="448" cy="128" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="448" cy="128" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Florence" data-label="Accademia di Firenze · 佛罗伦萨"/>
 
-                <!-- New York, USA -->
-                <circle class="collection-dot" cx="220" cy="160" r="8" data-city="NewYork">
-                    <title>UNESCO Headquarters, New York</title>
-                </circle>
+                    <!-- Rome, Italy -->
+                    <circle cx="455" cy="138" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="455" cy="138" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Rome" data-label="Accademia di Roma · 罗马"/>
 
-                <!-- Chengdu, China -->
-                <circle class="collection-dot" cx="620" cy="220" r="8" data-city="Chengdu">
-                    <title>Sichuan Museum, Chengdu</title>
-                </circle>
+                    <!-- Bangkok, Thailand -->
+                    <circle cx="680" cy="215" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="680" cy="215" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Bangkok" data-label="Thai Royal Collection · 曼谷"/>
+
+                    <!-- New York, USA (UNESCO) -->
+                    <circle cx="230" cy="145" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="230" cy="145" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="NewYork" data-label="UNESCO · 纽约"/>
+
+                    <!-- Chengdu, China (home base - larger) -->
+                    <circle cx="688" cy="138" r="16" fill="#d4af37" opacity="0.12"/>
+                    <circle class="collection-dot collection-dot--home" cx="688" cy="138" r="7" fill="url(#dotGrad)" filter="url(#glow-strong)" data-city="Chengdu" data-label="四川博物院 · 成都"/>
+
+                    <!-- Beijing, China (Olympics) -->
+                    <circle cx="710" cy="115" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="710" cy="115" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Beijing" data-label="北京奥运组委会 · 北京"/>
+
+                    <!-- Fukuoka, Japan -->
+                    <circle cx="790" cy="108" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="790" cy="108" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Fukuoka" data-label="福冈亚洲美术馆 · 福冈"/>
+                </g>
             </svg>
 
-            <div class="map-note" data-i18n="collections.map.note">点击光点查看收藏详情 / Click the glowing dots to view collection details</div>
+            <!-- Tooltip -->
+            <div class="map-tooltip" id="mapTooltip"></div>
+            <div class="map-note" data-i18n="collections.map.note">悬停光点查看收藏详情 / Hover the glowing dots to view collection details</div>
         </div>
     </section>
 
@@ -502,36 +554,65 @@
         .world-map {
             width: 100%;
             height: auto;
-            max-height: 400px;
-            margin-bottom: 30px;
+            max-height: 480px;
+            margin-bottom: 20px;
         }
 
         .collection-dot {
-            animation: pulse-glow 2s ease-in-out infinite;
             cursor: pointer;
-            transition: r 0.3s ease;
+            transition: all 0.3s ease;
+            animation: dot-pulse 3s ease-in-out infinite;
         }
 
         .collection-dot:hover {
-            r: 12;
+            r: 9;
         }
 
-        @keyframes pulse-glow {
-            0%, 100% {
-                opacity: 1;
-                filter: drop-shadow(0 0 8px #d4af37) drop-shadow(0 0 4px #d4af37);
-            }
-            50% {
-                opacity: 0.7;
-                filter: drop-shadow(0 0 12px #d4af37) drop-shadow(0 0 8px #d4af37);
-            }
+        .collection-dot--home {
+            animation: dot-pulse-home 2.5s ease-in-out infinite;
+        }
+
+        .collection-dot--home:hover {
+            r: 11;
+        }
+
+        @keyframes dot-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.65; }
+        }
+
+        @keyframes dot-pulse-home {
+            0%, 100% { opacity: 1; filter: url(#glow-strong); }
+            50% { opacity: 0.75; }
+        }
+
+        .map-tooltip {
+            position: absolute;
+            background: rgba(20,20,20,0.95);
+            border: 1px solid #d4af37;
+            color: #f0e6c0;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 3px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            white-space: nowrap;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.2);
+        }
+
+        .map-tooltip.active {
+            opacity: 1;
         }
 
         .map-note {
             text-align: center;
-            color: #999;
+            color: #666;
             font-family: 'Noto Serif SC', serif;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            margin-top: 10px;
         }
 
         /* Collections Grid */
@@ -809,5 +890,32 @@
     <script src="js/components.min.js"></script>
     <script src="js/i18n.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script>
+    (function(){
+        var container = document.getElementById('mapContainer');
+        var tooltip = document.getElementById('mapTooltip');
+        if (!container || !tooltip) return;
+        var dots = container.querySelectorAll('.collection-dot');
+        dots.forEach(function(dot){
+            dot.addEventListener('mouseenter', function(e){
+                var label = dot.getAttribute('data-label');
+                if (!label) return;
+                tooltip.textContent = label;
+                tooltip.classList.add('active');
+            });
+            dot.addEventListener('mousemove', function(e){
+                var rect = container.getBoundingClientRect();
+                var x = e.clientX - rect.left + 15;
+                var y = e.clientY - rect.top - 30;
+                if (x + 200 > rect.width) x = e.clientX - rect.left - 180;
+                tooltip.style.left = x + 'px';
+                tooltip.style.top = y + 'px';
+            });
+            dot.addEventListener('mouseleave', function(){
+                tooltip.classList.remove('active');
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
