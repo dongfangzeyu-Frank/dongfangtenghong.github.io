@@ -985,7 +985,7 @@ a:hover {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(0.6);
+  filter: brightness(0.75);
   transition: transform 1.5s var(--ease-smooth), filter 0.5s var(--ease-smooth);
 }
 
