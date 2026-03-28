@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dongfang Tenghong's Artistic Life Memories - A visual record from youth to contemporary master artist.">
+    <meta property="og:title" content="Memories - Dongfang Tenghong">
+    <meta property="og:description" content="Precious moments from more than four decades of artistic life">
+    <meta property="og:type" content="website">
+    <title data-i18n="memories.title">Memories - Dongfang Tenghong Official Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="canonical" href="https://dongfangtenghong.com/en/memories.html">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="site-nav-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="hero hero-dark" style="min-height: 40vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">Memories / 回忆</h1>
+            <p class="hero-subtitle">Precious Moments from Four Decades of Artistic Life / 四十余年艺术人生的珍贵瞬间</p>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="mem-gallery">
+        <div class="mem-grid">
+
+            <div class="mem-item">
+                <img src="../images/memory-16.jpg" alt="Youth" loading="lazy">
+                <div class="mem-caption">Youth</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-05.jpg" alt="Young Artist Years" loading="lazy">
+                <div class="mem-caption">Young Artist Years</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-06.jpg" alt="Early Imagery" loading="lazy">
+                <div class="mem-caption">Early Imagery</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-10.jpg" alt="With Artwork" loading="lazy">
+                <div class="mem-caption">With Artwork</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-09.jpg" alt="Exhibition Scene" loading="lazy">
+                <div class="mem-caption">Exhibition Scene</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-08.jpg" alt="Exhibition and Exchange" loading="lazy">
+                <div class="mem-caption">Exhibition and Exchange</div>
+            </div>
+
+            <div class="mem-item mem-item--wide">
+                <img src="../images/memory-12.jpg" alt="Highland Fieldwork" loading="lazy">
+                <div class="mem-caption">Highland Fieldwork</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-07.jpg" alt="Outdoor Sketching" loading="lazy">
+                <div class="mem-caption">Outdoor Sketching</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-01.jpg" alt="Artist on Journey" loading="lazy">
+                <div class="mem-caption">Artist on Journey</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-04.jpg" alt="Tibetan Region Exchange" loading="lazy">
+                <div class="mem-caption">Tibetan Region Exchange</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-03.jpg" alt="With White Horse" loading="lazy">
+                <div class="mem-caption">With White Horse</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-02.jpg" alt="Studio" loading="lazy">
+                <div class="mem-caption">Studio</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-11.jpg" alt="Artwork Display" loading="lazy">
+                <div class="mem-caption">Artwork Display</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-13.jpg" alt="Mural Creation" loading="lazy">
+                <div class="mem-caption">Mural Creation</div>
+            </div>
+
+            <div class="mem-item mem-item--wide">
+                <img src="../images/memory-14.jpg" alt="Exhibition Space" loading="lazy">
+                <div class="mem-caption">Exhibition Space</div>
+            </div>
+
+            <div class="mem-item">
+                <img src="../images/memory-15.jpg" alt="Contemporary Work" loading="lazy">
+                <div class="mem-caption">Contemporary Work</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="site-footer-placeholder"></div>
+
+    <style>
+        .mem-gallery {
+            background: #0d0d0d;
+            padding: 60px 20px 80px;
+        }
+
+        .mem-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            columns: 3;
+            column-gap: 16px;
+        }
+
+        .mem-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            background: #1a1a1a;
+            cursor: pointer;
+        }
+
+        .mem-item img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.85);
+            transition: filter 0.4s ease, transform 0.6s ease;
+        }
+
+        .mem-item:hover img {
+            filter: brightness(1);
+            transform: scale(1.03);
+        }
+
+        .mem-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 16px 12px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.9rem;
+            color: #e0d8c8;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mem-item:hover .mem-caption {
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        .mem-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+
+        .mem-lightbox.active {
+            display: flex;
+        }
+
+        .mem-lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 2px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+        }
+
+        .mem-lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #999;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10000;
+            font-family: sans-serif;
+            transition: color 0.2s;
+        }
+
+        .mem-lightbox-close:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .mem-grid {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .mem-grid {
+                columns: 1;
+            }
+        }
+    </style>
+
+    <!-- Lightbox -->
+    <div class="mem-lightbox" id="memLightbox">
+        <span class="mem-lightbox-close" id="memClose">&times;</span>
+        <img id="memLightboxImg" src="" alt="">
+    </div>
+
+    <script src="../js/components.min.js"></script>
+    <script src="../js/i18n.min.js"></script>
+    <script src="../js/main.min.js"></script>
+    <script>
+    (function(){
+        var lightbox = document.getElementById('memLightbox');
+        var lbImg = document.getElementById('memLightboxImg');
+        var closeBtn = document.getElementById('memClose');
+        document.querySelectorAll('.mem-item img').forEach(function(img){
+            img.addEventListener('click', function(){
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                lightbox.classList.add('active');
+            });
+        });
+        lightbox.addEventListener('click', function(e){
+            if (e.target !== lbImg) lightbox.classList.remove('active');
+        });
+        closeBtn.addEventListener('click', function(){ lightbox.classList.remove('active'); });
+        document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+        });
+    })();
+    </script>
+</body>
+</html>
