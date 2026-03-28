@@ -1774,6 +1774,56 @@ a:hover {
   filter: brightness(0.9);
 }
 
+/* Panoramic Scroll Painting — full-width horizontal display */
+.gallery-item--panoramic {
+  column-span: all;
+  margin: var(--space-3xl) 0;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  background: var(--abyss);
+}
+
+.gallery-item--panoramic .gallery-item-image {
+  width: 100%;
+  filter: brightness(0.85);
+  transition: filter 0.5s var(--ease-smooth);
+}
+
+.gallery-item--panoramic .gallery-item-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item--panoramic:hover .gallery-item-image {
+  transform: none;
+  filter: brightness(0.95);
+}
+
+.gallery-item--panoramic .gallery-item-overlay {
+  position: relative;
+  background: transparent;
+  padding: var(--space-lg) 0;
+  text-align: center;
+  opacity: 1;
+  transform: none;
+}
+
+.gallery-item--panoramic .gallery-item-title {
+  font-size: var(--text-xl);
+}
+
+.gallery-item--panoramic .scroll-hint {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  color: var(--fog);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: var(--space-xs);
+}
+
 .gallery-item-overlay {
   position: absolute;
   inset: 0;
