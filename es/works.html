@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Obras de Dongfang Tenghong - Tótem de la Vida, Altiplano y Corcel Blanco, series Monje Errante. Galería de pinturas contemporáneas.">
+  <meta name="keywords" content="obras de Dongfang Tenghong,Tótem de la Vida,Altiplano,Corcel Blanco,Monje Errante,arte contemporáneo">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Obras - Dongfang Tenghong">
+  <meta property="og:description" content="Obras de las series Tótem de la Vida, Altiplano y Corcel Blanco, Monje Errante">
+  <meta property="og:type" content="website">
+
+  <title data-i18n="page-title-works">Obras | Dongfang Tenghong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <style>
+    /* ============================================================================
+       WORKS PAGE - Gallery Styling
+       ============================================================================ */
+
+    /* Hero Section - Smaller than homepage */
+    .page-hero {
+      position: relative;
+      height: 40vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--void) 0%, var(--coal) 50%, var(--void) 100%);
+      border-bottom: 1px solid rgba(200, 169, 110, 0.1);
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grain" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="%23000000"/><circle cx="30" cy="40" r="1" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="1200" height="400" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-hero-eyebrow {
+      font-family: var(--font-label);
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .page-hero-eyebrow::before,
+    .page-hero-eyebrow::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .page-hero-title {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 3px;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .page-hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--mist);
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      position: sticky;
+      top: 72px;
+      z-index: 50;
+      background: rgba(8, 8, 8, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(200, 169, 110, 0.1);
+      padding: 24px 0;
+      animation: slideDown 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .filter-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .filter-label {
+      font-family: var(--font-label);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--fog);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 8px;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    .filter-tabs::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .filter-tabs::-webkit-scrollbar-thumb {
+      background: var(--ash);
+      border-radius: 2px;
+    }
+
+    .filter-tab {
+      position: relative;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: var(--fog);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s var(--ease-smooth);
+      font-weight: 400;
+    }
+
+    .filter-tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s var(--ease-smooth);
+    }
+
+    .filter-tab:hover {
+      color: var(--cream);
+    }
+
+    .filter-tab:hover::after {
+      transform: scaleX(1);
+    }
+
+    .filter-tab.active {
+      color: var(--cream);
+    }
+
+    .filter-tab.active::after {
+      transform: scaleX(1);
+    }
+
+    /* Gallery Grid - CSS Grid Layout */
+    .gallery-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 48px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      animation: revealItem 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      opacity: 1;
+      aspect-ratio: auto;
+    }
+
+    .gallery-item[data-hidden="true"] {
+      display: none;
+    }
+
+    /* Wide/Landscape paintings span full width */
+    .gallery-item--wide {
+      grid-column: 1 / -1;
+      min-height: 400px;
+    }
+
+    .gallery-item--wide .gallery-item-image img {
+      width: 100%;
+      height: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    @keyframes revealItem {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .gallery-item-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: transparent;
+    }
+
+    .gallery-item-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+      transition: transform 0.6s var(--ease-smooth), filter 0.6s var(--ease-smooth);
+    }
+
+    .gallery-item:hover .gallery-item-image img {
+      transform: scale(1.08);
+      filter: brightness(1.15) contrast(1.1);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      opacity: 0;
+      transition: opacity 0.4s var(--ease-smooth);
+      z-index: 2;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      line-height: 1.4;
+    }
+
+    .gallery-item-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--mist);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-item-year,
+    .gallery-item-medium,
+    .gallery-item-dimensions,
+    .gallery-item-notes {
+      display: inline;
+    }
+
+    .gallery-item-notes {
+      color: var(--fog);
+      font-size: 10px;
+      margin-top: 4px;
+      width: 100%;
+    }
+
+    /* Gallery Pair Layout */
+    .gallery-item--pair {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-pair {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-pair-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-pair-item .gallery-item-image {
+      aspect-ratio: 3/4;
+      margin-bottom: 12px;
+    }
+
+    .gallery-pair-info {
+      padding: 0 0 8px 0;
+    }
+
+    .gallery-pair-item .gallery-item-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .gallery-pair-item .gallery-item-year {
+      font-size: 11px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 80px 48px;
+      background: rgba(8, 8, 8, 0.5);
+      border-top: 1px solid rgba(200, 169, 110, 0.1);
+    }
+
+    .cta-text {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 32px;
+      border: 1px solid var(--gold);
+      color: var(--cream);
+      font-family: var(--font-label);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-smooth);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .cta-button:hover {
+      background: var(--gold);
+      color: var(--void);
+      box-shadow: 0 12px 32px rgba(200, 169, 110, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      .page-hero-title {
+        font-size: 36px;
+      }
+
+      .gallery-section {
+        padding: 60px 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .gallery-item--wide .gallery-item-image img {
+        max-height: 50vh;
+      }
+
+      .page-hero {
+        height: 35vh;
+        min-height: 300px;
+      }
+
+      .page-hero-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+
+      .page-hero-eyebrow::before,
+      .page-hero-eyebrow::after {
+        display: none;
+      }
+
+      .filter-label {
+        display: none;
+      }
+
+      .filter-tabs {
+        flex-wrap: wrap;
+        gap: 8px 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+
+      .filter-tab {
+        font-size: 12px;
+        padding: 6px 12px;
+        border: 1px solid rgba(200, 169, 110, 0.2);
+        border-radius: 4px;
+      }
+
+      .filter-tab.active {
+        border-color: var(--gold);
+        background: rgba(200, 169, 110, 0.1);
+      }
+
+      .gallery-section {
+        padding: 40px 24px;
+      }
+
+      .filter-container {
+        padding: 0 24px;
+      }
+
+      .cta-section {
+        padding: 60px 24px;
+      }
+
+      .cta-text {
+        font-size: 20px;
+      }
+    }
+  </style>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dongfangtenghong.com/es/works.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Colección de Obras de Dongfang Tenghong",
+      "description": "Galería de pinturas místicas contemporáneas de Dongfang Tenghong",
+      "url": "https://dongfangtenghong.com/es/works.html",
+      "isPartOf": {"@type": "WebSite", "url": "https://dongfangtenghong.com/"}
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation (rendered by components.js) -->
+    <div id="site-nav-placeholder"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="page-hero-eyebrow" data-i18n="hero-eyebrow">Obras / 作品</span>
+      <h1 class="page-hero-title" data-i18n="hero-title">Lo Sagrado Silencioso</h1>
+      <p class="page-hero-subtitle" data-i18n="hero-subtitle">静默的神域</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-container">
+      <span class="filter-label" data-i18n="filter-label">Filtrar por Serie / 按系列筛选</span>
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-tab active" data-filter="all" data-i18n="filter-all">Todas / 全部</button>
+        <button class="filter-tab" data-filter="life-totem" data-i18n="filter-life-totem">Tótem de la Vida / 生命图腾</button>
+        <button class="filter-tab" data-filter="highland-steed" data-i18n="filter-highland-steed">Altiplano y Corcel Blanco / 高地白驹</button>
+        <button class="filter-tab" data-filter="flower-season" data-i18n="filter-flower-season">Temporada de Flores / 花季</button>
+        <button class="filter-tab" data-filter="new-ink" data-i18n="filter-new-ink">Nueva Tinta / 新水墨</button>
+        <button class="filter-tab" data-filter="early" data-i18n="filter-early">Obras Tempranas / 早期</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="gallery-grid" id="gallery-grid">
+
+      <!-- Life Totem Series -->
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-14-sm.webp 800w, ../images/life-totem-14-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-14-md.webp" data-full="../images/life-totem-14-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2026</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">60×80cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-01-sm.webp 800w, ../images/life-totem-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-01-md.webp" data-full="../images/life-totem-01-lg.webp" alt="Serie Tótem de la Vida - Pigmento mineral sobre papel" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Pigmento mineral sobre papel</span>
+            <span class="gallery-item-dimensions">67×138cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-03-sm.webp 800w, ../images/life-totem-03-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-03-md.webp" data-full="../images/life-totem-03-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">50×60cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-05-sm.webp 800w, ../images/life-totem-05-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-05-md.webp" data-full="../images/life-totem-05-lg.webp" alt="Serie Tótem de la Vida - Pigmento mineral sobre papel" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Pigmento mineral sobre papel</span>
+            <span class="gallery-item-dimensions">67×138cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-06-sm.webp 800w, ../images/life-totem-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-06-md.webp" data-full="../images/life-totem-06-lg.webp" alt="Serie Tótem de la Vida - Tinta sobre papel" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Tinta sobre papel</span>
+            <span class="gallery-item-dimensions">67×138cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-12-sm.webp 800w, ../images/life-totem-12-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-12-md.webp" data-full="../images/life-totem-12-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">30×60cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-13-sm.webp 800w, ../images/life-totem-13-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-13-md.webp" data-full="../images/life-totem-13-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">50×60cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-08-sm.webp 800w, ../images/life-totem-08-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-08-md.webp" data-full="../images/life-totem-08-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2024</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">120×160cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-10-sm.webp 800w, ../images/life-totem-10-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-10-md.webp" data-full="../images/life-totem-10-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2024</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">50×60cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-16-sm.webp 800w, ../images/life-totem-16-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-16-md.webp" data-full="../images/life-totem-16-lg.webp" alt="Serie Tótem de la Vida - Acrílico sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2024</span>
+            <span class="gallery-item-medium">Acrílico sobre lienzo</span>
+            <span class="gallery-item-dimensions">120×160cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-04-sm.webp 800w, ../images/life-totem-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-04-md.webp" data-full="../images/life-totem-04-lg.webp" alt="Serie Tótem de la Vida - Pigmento mineral sobre papel" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2023</span>
+            <span class="gallery-item-medium">Pigmento mineral sobre papel</span>
+            <span class="gallery-item-dimensions">67×138cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-07-sm.webp 800w, ../images/life-totem-07-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-07-md.webp" data-full="../images/life-totem-07-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2023</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">100×120cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-09-sm.webp 800w, ../images/life-totem-09-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-09-md.webp" data-full="../images/life-totem-09-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2023</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">19×23cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-15-sm.webp 800w, ../images/life-totem-15-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-15-md.webp" data-full="../images/life-totem-15-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2022</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">80×10cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-17-sm.webp 800w, ../images/life-totem-17-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-17-md.webp" data-full="../images/life-totem-17-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2022</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">160×180cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-18-sm.webp 800w, ../images/life-totem-18-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-18-md.webp" data-full="../images/life-totem-18-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2022</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">60×133cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-11-sm.webp 800w, ../images/life-totem-11-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-11-md.webp" data-full="../images/life-totem-11-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2019</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">160×180cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-19-sm.webp 800w, ../images/life-totem-19-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-19-md.webp" data-full="../images/life-totem-19-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2019</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">115×146cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="life-totem">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/life-totem-02-sm.webp 800w, ../images/life-totem-02-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/life-totem-02-md.webp" data-full="../images/life-totem-02-lg.webp" alt="Serie Tótem de la Vida - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Tótem de la Vida</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2017</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">120×160cm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- White Steed Series -->
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/white-steed-02-sm.webp 800w, ../images/white-steed-02-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/white-steed-02-md.webp" data-full="../images/white-steed-02-lg.webp" alt="Tierra Pura - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Tierra Pura</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">160×180cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/white-steed-01-sm.webp 800w, ../images/white-steed-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/white-steed-01-md.webp" data-full="../images/white-steed-01-lg.webp" alt="Aurora Oriental - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Aurora Oriental</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2024</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">160×180cm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highland Series -->
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-04-sm.webp 800w, ../images/highland-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/highland-04-md.webp" data-full="../images/highland-04-lg.webp" alt="Seis Reinos - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Seis Reinos</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">160×360cm</span>
+            <span class="gallery-item-notes">Dongfang Tenghong (Tríptico)</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-12-sm.webp 800w, ../images/highland-12-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/highland-12-md.webp" data-full="../images/highland-12-lg.webp" alt="Montañas Lejanas - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Montañas Lejanas</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2019</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-01-sm.webp 800w, ../images/highland-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/highland-01-md.webp" data-full="../images/highland-01-lg.webp" alt="Asustado - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Asustado</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2017</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">120×160cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-06-sm.webp 800w, ../images/highland-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/highland-06-md.webp" data-full="../images/highland-06-lg.webp" alt="Paisaje Cielo y Tierra - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Paisaje Cielo y Tierra</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2017</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">100×120cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-08-sm.webp 800w, ../images/highland-08-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/highland-08-md.webp" data-full="../images/highland-08-lg.webp" alt="Sombra - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Sombra</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2013</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">130×190cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-05-sm.webp 800w, ../images/highland-05-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/highland-05-md.webp" data-full="../images/highland-05-lg.webp" alt="Aguas Tranquilas Montaña Pura - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Aguas Tranquilas Montaña Pura</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2007</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">130×150cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-11-sm.webp 800w, ../images/highland-11-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/highland-11-md.webp" data-full="../images/highland-11-lg.webp" alt="Nubes Cercanas - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Nubes Cercanas</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2007</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">130×190cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-07-sm.webp 800w, ../images/highland-07-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/highland-07-md.webp" data-full="../images/highland-07-lg.webp" alt="Rastros Perdurables - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Rastros Perdurables</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2004</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">135×195cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-10-sm.webp 800w, ../images/highland-10-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/highland-10-md.webp" data-full="../images/highland-10-lg.webp" alt="Monje Errante - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Monje Errante</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2003</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">130×190cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--wide" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-03-sm.webp 800w, ../images/highland-03-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/highland-03-md.webp" data-full="../images/highland-03-lg.webp" alt="Nube - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Nube</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1999</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">135×195cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-09-sm.webp 800w, ../images/highland-09-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/highland-09-md.webp" data-full="../images/highland-09-lg.webp" alt="Casa Antigua - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Casa Antigua</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1996</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">116×146cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="highland-steed">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/highland-02-sm.webp 800w, ../images/highland-02-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/highland-02-md.webp" data-full="../images/highland-02-lg.webp" alt="Cuán Lejano Es por Siempre" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Cuán Lejano Es por Siempre</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year"></span>
+            <span class="gallery-item-medium"></span>
+            <span class="gallery-item-dimensions">120×160cm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flower Season Series -->
+      <div class="gallery-item" data-series="flower-season">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/flower-season-01-sm.webp 800w, ../images/flower-season-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/flower-season-01-md.webp" data-full="../images/flower-season-01-lg.webp" alt="Serie Temporada de Flores - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Serie Temporada de Flores</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2025</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Ink Series -->
+      <div class="gallery-item gallery-item--wide" data-series="new-ink">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/new-ink-01-sm.webp 800w, ../images/new-ink-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/new-ink-01-md.webp" data-full="../images/new-ink-01-lg.webp" alt="Monje - Tinta sobre papel" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Monje</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2023</span>
+            <span class="gallery-item-medium">Tinta sobre papel</span>
+            <span class="gallery-item-dimensions">68×138cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="new-ink">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/new-ink-02-sm.webp 800w, ../images/new-ink-02-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/new-ink-02-md.webp" data-full="../images/new-ink-02-lg.webp" alt="Corcel Blanco - Pigmento mineral sobre papel" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Corcel Blanco</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2019</span>
+            <span class="gallery-item-medium">Pigmento mineral sobre papel</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--wide" data-series="new-ink">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/new-ink-03-sm.webp 800w, ../images/new-ink-03-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/new-ink-03-md.webp" data-full="../images/new-ink-03-lg.webp" alt="Después del Corcel Blanco - Color sobre papel" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Después del Corcel Blanco</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">2019</span>
+            <span class="gallery-item-medium">Color sobre papel</span>
+            <span class="gallery-item-dimensions">138×248cm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Early Works Series -->
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-01-sm.webp 800w, ../images/early-01-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-01-md.webp" data-full="../images/early-01-lg.webp" alt="Paraíso - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Paraíso</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1989</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">100×120cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-05-sm.webp 800w, ../images/early-05-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-05-md.webp" data-full="../images/early-05-lg.webp" alt="Matices de Primavera - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Matices de Primavera</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1989</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">90×112cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-08-sm.webp 800w, ../images/early-08-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-08-md.webp" data-full="../images/early-08-lg.webp" alt="Noche Blanca - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Noche Blanca</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1989</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">160×160cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-02-sm.webp 800w, ../images/early-02-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-02-md.webp" data-full="../images/early-02-lg.webp" alt="Sonido Celestial - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Sonido Celestial</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1988</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">100×80cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-10-sm.webp 800w, ../images/early-10-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-10-md.webp" data-full="../images/early-10-lg.webp" alt="Fuera de la Ventana - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Fuera de la Ventana</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1987</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">195×195cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-03-sm.webp 800w, ../images/early-03-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-03-md.webp" data-full="../images/early-03-lg.webp" alt="Pequeña Flor Blanca - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Pequeña Flor Blanca</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1986</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">80×100cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--wide" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-09-sm.webp 800w, ../images/early-09-md.webp 1200w" sizes="(max-width: 768px) 100vw, 100vw">
+              <img src="../images/early-09-md.webp" data-full="../images/early-09-lg.webp" alt="Ventana - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Ventana</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1985</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">180×200cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-06-sm.webp 800w, ../images/early-06-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-06-md.webp" data-full="../images/early-06-lg.webp" alt="Cruzar el Río - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Cruzar el Río</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1984</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">95×195cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--pair" data-series="early">
+        <div class="gallery-pair">
+          <div class="gallery-pair-item">
+            <div class="gallery-item-image">
+              <picture>
+                <source type="image/webp" srcset="../images/early-12-sm.webp 800w, ../images/early-12-md.webp 1200w" sizes="50vw">
+                <img src="../images/early-12-md.webp" data-full="../images/early-12-lg.webp" alt="Hermana - Óleo sobre lienzo" loading="lazy">
+              </picture>
+            </div>
+            <div class="gallery-pair-info">
+              <h3 class="gallery-item-title">Hermana</h3>
+              <span class="gallery-item-year">1983</span>
+            </div>
+          </div>
+          <div class="gallery-pair-item">
+            <div class="gallery-item-image">
+              <picture>
+                <source type="image/webp" srcset="../images/early-11-sm.webp 800w, ../images/early-11-md.webp 1200w" sizes="50vw">
+                <img src="../images/early-11-md.webp" data-full="../images/early-11-lg.webp" alt="Infancia - Óleo sobre lienzo" loading="lazy">
+              </picture>
+            </div>
+            <div class="gallery-pair-info">
+              <h3 class="gallery-item-title">Infancia</h3>
+              <span class="gallery-item-year">1982</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-04-sm.webp 800w, ../images/early-04-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-04-md.webp" data-full="../images/early-04-lg.webp" alt="Viaje - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Viaje</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1982</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">60×130cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-series="early">
+        <div class="gallery-item-image">
+            <picture>
+              <source type="image/webp" srcset="../images/early-07-sm.webp 800w, ../images/early-07-md.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="../images/early-07-md.webp" data-full="../images/early-07-lg.webp" alt="Dulce - Óleo sobre lienzo" loading="lazy">
+            </picture>
+          </div>
+        <div class="gallery-item-overlay">
+          <h3 class="gallery-item-title">Dulce</h3>
+          <div class="gallery-item-meta">
+            <span class="gallery-item-year">1981</span>
+            <span class="gallery-item-medium">Óleo sobre lienzo</span>
+            <span class="gallery-item-dimensions">130×150cm</span>
+            <span class="gallery-item-notes">(Primer cuadro al óleo creado en la Academia de Bellas Artes de Sichuan)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <p class="cta-text" data-i18n="cta-text">Para consultas sobre obras de arte o adquisiciones, contáctenos</p>
+    <a href="../contact.html" class="cta-button" data-i18n="cta-button">Contactarnos / 联系我们</a>
+  </section>
+
+    <!-- Footer (rendered by components.js) -->
+    <div id="site-footer-placeholder"></div>
+
+    <!-- Unified Scripts -->
+    <script src="../js/components.min.js"></script>
+    <script src="../js/i18n.min.js"></script>
+    <script src="../js/main.min.js"></script>
+</body>
+</html>
