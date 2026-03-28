@@ -1774,6 +1774,18 @@ a:hover {
   filter: brightness(0.9);
 }
 
+/* Wide painting — spans both columns for full-width display */
+.gallery-item--wide {
+  column-span: all;
+  margin: var(--space-xl) 0;
+}
+
+.gallery-item--wide .gallery-item-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Panoramic Scroll Painting — full-width horizontal display */
 .gallery-item--panoramic {
   column-span: all;
