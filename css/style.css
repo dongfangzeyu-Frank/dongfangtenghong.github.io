@@ -1776,6 +1776,7 @@ a:hover {
 
 /* Wide painting — spans both columns for full-width display */
 .gallery-item--wide {
+  grid-column: 1 / -1;
   column-span: all;
   margin: var(--space-xl) 0;
 }
