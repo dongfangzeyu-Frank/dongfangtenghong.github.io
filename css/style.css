@@ -2962,15 +2962,18 @@ select.form-input {
 }
 
 .highlight-card--horizontal .card-image {
-  flex: 0 0 320px;
-  max-height: 240px;
+  flex: 0 0 400px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--deep);
 }
 
 .highlight-card--horizontal .card-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .highlight-card--horizontal .card-content {
@@ -2997,7 +3000,6 @@ select.form-input {
   }
   .highlight-card--horizontal .card-image {
     flex: none;
-    max-height: 200px;
   }
   .highlight-card--horizontal .card-content {
     padding: var(--space-xl);
