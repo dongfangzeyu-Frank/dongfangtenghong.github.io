@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東方騰弘に連絡 - キュレーション的協力、収集の問い合わせ、メディアの問い合わせ。">
+    <meta name="keywords" content="東方騰弘,contact,cuatorial collaboration,collection inquiry">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="お問い合わせ - 東方騰弘">
+    <meta property="og:description" content="キュレーション的協力、収集の問い合わせ、メディアの問い合わせのためのお問い合わせ">
+    <meta property="og:type" content="website">
+    <title data-i18n="contact-title">お問い合わせ | 東方騰弘</title>
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dongfangtenghong.com/ja/contact.html">
+</head>
+<body>
+    <!-- Navigation (rendered by components.js) -->
+    <div id="site-nav-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="hero-contact">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="contact-main-title">お問い合わせ / 联系</h1>
+            <p class="hero-subtitle" data-i18n="contact-hero-subtitle">お客様とのご連絡をお待ちしております / 我们期待与您建立联系</p>
+        </div>
+    </section>
+
+    <!-- Contact Category Selection -->
+    <section class="contact-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <!-- Curatorial Collaboration -->
+                <div class="category-card" data-category="curatorial">
+                    <div class="card-icon" data-i18n="cat-icon-curatorial">策</div>
+                    <h3 class="card-title" data-i18n="contact-cat-curatorial">キュレーション的協力 / 策展合作</h3>
+                    <p class="card-description" data-i18n="contact-cat-curatorial-desc">美術館、ギャラリー、アートフェアのコラボレーション / 美术馆、画廊、艺术博览会的展览邀请与合作</p>
+                </div>
+
+                <!-- Collection Inquiry -->
+                <div class="category-card" data-category="collection">
+                    <div class="card-icon" data-i18n="cat-icon-collection">藏</div>
+                    <h3 class="card-title" data-i18n="contact-cat-collection">収集のお問い合わせ / 收藏咨询</h3>
+                    <p class="card-description" data-i18n="contact-cat-collection-desc">プライベート、コーポレート、機関収集の作品についてのお問い合わせ / 私人藏家、企业收藏和机构收藏的作品咨询</p>
+                </div>
+
+                <!-- Media & Press -->
+                <div class="category-card" data-category="media">
+                    <div class="card-icon" data-i18n="cat-icon-media">媒</div>
+                    <h3 class="card-title" data-i18n="contact-cat-media">メディア・プレス / 媒体采访</h3>
+                    <p class="card-description" data-i18n="contact-cat-media-desc">メディアからのインタビューおよびプレスキットの問い合わせ / 杂志、电视、网络媒体的采访与资料获取</p>
+                </div>
+
+                <!-- General Inquiry -->
+                <div class="category-card" data-category="general">
+                    <div class="card-icon" data-i18n="cat-icon-general">通</div>
+                    <h3 class="card-title" data-i18n="contact-cat-general">一般的なお問い合わせ / 通用联系</h3>
+                    <p class="card-description" data-i18n="contact-cat-general-desc">学術交流、イベント招待、その他のお問い合わせ / 学术交流、活动邀请及其他合作</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <form class="contact-form" id="contactForm">
+                <div class="form-header">
+                    <h2 class="form-title" data-i18n="contact-form-title">お問い合わせフォーム / 联系表单</h2>
+                    <p class="form-subtitle" data-i18n="contact-form-subtitle">お問い合わせの種類を選択して、フォームを記入してください / 请选择您的咨询类别并填写相应表单</p>
+                </div>
+
+                <!-- Common Fields -->
+                <div class="form-group">
+                    <label for="name" data-i18n="form-name-label">名前 / 姓名</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-i18n="form-email-label">メールアドレス / 邮箱</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="organization" data-i18n="form-organization-label">組織・機関 / 机构/组织</label>
+                    <input type="text" id="organization" name="organization" class="form-input">
+                </div>
+
+                <!-- Curatorial-Specific Fields -->
+                <div class="form-group form-group-curatorial" style="display: none;" data-category="curatorial">
+                    <label for="exhibition-date" data-i18n="form-exhibition-date-label">展覧会の日程 / 展览时间</label>
+                    <input type="text" id="exhibition-date" name="exhibition-date" class="form-input" placeholder="e.g., June - August 2024 / 2024年6月-8月">
+                </div>
+
+                <div class="form-group form-group-curatorial" style="display: none;" data-category="curatorial">
+                    <label for="venue" data-i18n="form-venue-label">展示会場 / 展览场地</label>
+                    <input type="text" id="venue" name="venue" class="form-input" placeholder="e.g., 798 Art District / 798艺术区">
+                </div>
+
+                <!-- Collection-Specific Fields -->
+                <div class="form-group form-group-collection" style="display: none;" data-category="collection">
+                    <label for="series-interest" data-i18n="form-series-interest-label">関心のあるシリーズ / 感兴趣的系列</label>
+                    <select id="series-interest" name="series-interest" class="form-input">
+                        <option value="">-- 選択してください / 请选择 --</option>
+                        <option value="life-totem" data-i18n="series-life-totem">生命トーテム / 生命图腾</option>
+                        <option value="highland-steed" data-i18n="series-highland-steed">高地白馬 / 高地白驹</option>
+                        <option value="wandering-monk" data-i18n="series-wandering-monk">行僧 / 行僧</option>
+                        <option value="other" data-i18n="series-other">その他 / 其他</option>
+                    </select>
+                </div>
+
+                <!-- Media-Specific Fields -->
+                <div class="form-group form-group-media" style="display: none;" data-category="media">
+                    <label for="media-name" data-i18n="form-media-name-label">メディア名 / 媒体名称</label>
+                    <input type="text" id="media-name" name="media-name" class="form-input" placeholder="e.g., Art China / 艺术中国">
+                </div>
+
+                <div class="form-group form-group-media" style="display: none;" data-category="media">
+                    <label for="deadline" data-i18n="form-deadline-label">締切 / 截稿日期</label>
+                    <input type="text" id="deadline" name="deadline" class="form-input" placeholder="e.g., May 15, 2024 / 2024年5月15日">
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message" data-i18n="form-message-label">メッセージ / 留言</label>
+                    <textarea id="message" name="message" class="form-textarea" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit" class="btn-submit" data-i18n="form-submit-button">送信 / 发送</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Direct Contact Section -->
+    <section class="direct-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Direct Contact Column -->
+                <div class="contact-column">
+                    <h2 class="contact-heading" data-i18n="contact-direct-heading">直接連絡 / 即时联系</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon email-icon">✉</span>
+                            <div class="contact-details">
+                                <p class="contact-label" data-i18n="contact-email-label">メール / 电子邮件</p>
+                                <a href="mailto:dongfangzeyu@gmail.com" class="contact-value">dongfangzeyu@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon whatsapp-icon">📞</span>
+                            <div class="contact-details">
+                                <p class="contact-label" data-i18n="contact-whatsapp-label">電話 / 电话</p>
+                                <a href="tel:+8619189827561" class="contact-value" data-i18n="contact-whatsapp-number">+86 191 8982 7561</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item contact-item--wechat">
+                            <span class="contact-icon wechat-icon">微</span>
+                            <div class="contact-details">
+                                <p class="contact-label" data-i18n="contact-wechat-label">WeChat / 微信</p>
+                                <div class="wechat-qr-wrapper">
+                                    <img src="../images/wechat-qr.png" alt="WeChat QR Code / 微信二维码" class="wechat-qr-image">
+                                    <p class="wechat-qr-hint" data-i18n="contact-qr-placeholder">QRコードをスキャン / 扫码添加</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media Kit Column -->
+                <div class="contact-column">
+                    <h2 class="contact-heading" data-i18n="contact-media-kit-heading">メディアキット / 媒体资料</h2>
+                    <div class="media-kit-content">
+                        <h3 class="media-kit-title" data-i18n="contact-media-kit-title">メディアキットをダウンロード / 下载媒体资料包</h3>
+                        <p class="media-kit-description" data-i18n="contact-media-kit-description">高解像度のアーティスト写真、代表作、完全な略歴（CN/EN）、厳選された批評文を含みます / 包含艺术家高清照片、代表作图片、完整简历（中/英）、艺术评论节选</p>
+                        <a href="#" class="btn-download" data-i18n="contact-download-button">メディアキットをダウンロード / 下载媒体资料</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map/Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-content">
+                <h2 class="location-title" data-i18n="contact-location-title">スタジオは中国・成都にあります / 工作室位于中国·成都</h2>
+                <div class="map-placeholder">
+                    <p data-i18n="contact-map-placeholder">地図はまもなく掲載予定です / 地图即将上线</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (rendered by components.js) -->
+    <div id="site-footer-placeholder"></div>
+
+    <!-- Unified Scripts -->
+    <script src="../js/components.min.js"></script>
+    <script src="../js/i18n.min.js"></script>
+    <script src="../js/main.min.js"></script>
+</body>
+</html>

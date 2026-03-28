@@ -10,6 +10,9 @@ var currentLang = 'zh';
     var path = window.location.pathname;
     if (path.includes('/en/')) currentLang = 'en';
     else if (path.includes('/es/')) currentLang = 'es';
+    else if (path.includes('/ja/')) currentLang = 'ja';
+    else if (path.includes('/ko/')) currentLang = 'ko';
+    else if (path.includes('/fr/')) currentLang = 'fr';
 })();
 var isSubLang = (currentLang !== 'zh');
 
@@ -74,6 +77,48 @@ var langData = {
         ],
         social: 'Redes Sociales',
         tagline: 'Pintura de Imaginería Mística Oriental'
+    },
+    ja: {
+        logo: '東方騰弘',
+        nav: [
+            {href: 'works.html', key: 'works', label: '作品'},
+            {href: 'about.html', key: 'about', label: 'について'},
+            {href: 'exhibitions.html', key: 'exhibitions', label: '展覧会'},
+            {href: 'news.html', key: 'news', label: 'ニュース'},
+            {href: 'collections.html', key: 'collections', label: 'コレクション'},
+            {href: 'memories.html', key: 'memories', label: '思い出'},
+            {href: 'contact.html', key: 'contact', label: 'お問い合わせ'}
+        ],
+        social: 'ソーシャルメディア',
+        tagline: '東洋神秘意象絵画'
+    },
+    ko: {
+        logo: '동방등홍',
+        nav: [
+            {href: 'works.html', key: 'works', label: '작품'},
+            {href: 'about.html', key: 'about', label: '소개'},
+            {href: 'exhibitions.html', key: 'exhibitions', label: '전시'},
+            {href: 'news.html', key: 'news', label: '뉴스'},
+            {href: 'collections.html', key: 'collections', label: '소장'},
+            {href: 'memories.html', key: 'memories', label: '추억'},
+            {href: 'contact.html', key: 'contact', label: '연락처'}
+        ],
+        social: '소셜 미디어',
+        tagline: '동양 신비 의상 회화'
+    },
+    fr: {
+        logo: 'Dongfang Tenghong',
+        nav: [
+            {href: 'works.html', key: 'works', label: 'Œuvres'},
+            {href: 'about.html', key: 'about', label: 'À propos'},
+            {href: 'exhibitions.html', key: 'exhibitions', label: 'Expositions'},
+            {href: 'news.html', key: 'news', label: 'Actualités'},
+            {href: 'collections.html', key: 'collections', label: 'Collections'},
+            {href: 'memories.html', key: 'memories', label: 'Souvenirs'},
+            {href: 'contact.html', key: 'contact', label: 'Contact'}
+        ],
+        social: 'Réseaux Sociaux',
+        tagline: 'Peinture d\'Imagerie Mystique Orientale'
     }
 };
 
@@ -91,10 +136,13 @@ function renderNav(activePage) {
         `<li><a href="${item.href}" class="${activePage === item.key ? 'active' : ''}" data-i18n="nav_${item.key}">${item.label}</a></li>`
     ).join('\n                    ');
 
-    // Build language toggle: 中 / EN / ES
+    // Build language toggle: 中 / EN / ES / 日 / 한 / FR
     const zhClass = currentLang === 'zh' ? 'active' : '';
     const enClass = currentLang === 'en' ? 'active' : '';
     const esClass = currentLang === 'es' ? 'active' : '';
+    const jaClass = currentLang === 'ja' ? 'active' : '';
+    const koClass = currentLang === 'ko' ? 'active' : '';
+    const frClass = currentLang === 'fr' ? 'active' : '';
 
     const navHTML = `
         <nav class="site-nav" role="navigation" aria-label="Main navigation">
@@ -112,6 +160,12 @@ function renderNav(activePage) {
                         <a href="${getLangSwitchURL('en')}" class="lang-btn ${enClass}" aria-label="English">EN</a>
                         <span class="lang-divider">/</span>
                         <a href="${getLangSwitchURL('es')}" class="lang-btn ${esClass}" aria-label="Español">ES</a>
+                        <span class="lang-divider">/</span>
+                        <a href="${getLangSwitchURL('ja')}" class="lang-btn ${jaClass}" aria-label="日本語">日</a>
+                        <span class="lang-divider">/</span>
+                        <a href="${getLangSwitchURL('ko')}" class="lang-btn ${koClass}" aria-label="한국어">한</a>
+                        <span class="lang-divider">/</span>
+                        <a href="${getLangSwitchURL('fr')}" class="lang-btn ${frClass}" aria-label="Français">FR</a>
                     </div>
                     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
                         <span></span>

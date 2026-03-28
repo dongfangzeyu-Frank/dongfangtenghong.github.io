@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東方騰弘グローバルコレクションマップ - 50以上の主要学術機関、美術館、組織および私人収集家によって収集された作品は、世界中の30以上の国と地域に広がっています。">
+    <meta name="keywords" content="東方騰弘収集, ロイヤルカレッジオブアート, パリ高等美術学校, UdKベルリン, UNESCO, 北京オリンピック, 四川美術館, 東方騰弘">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="コレクション - 東方騰弘">
+    <meta property="og:description" content="50以上の主要学術機関、美術館、組織および私人収集家による作品コレクションは、世界中の30以上の国と地域に広がっています。">
+    <meta property="og:type" content="website">
+    <title data-i18n="collections.title">コレクション - 東方騰弘公式ウェブサイト</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dongfangtenghong.com/ja/collections.html">
+</head>
+<body>
+    <!-- Navigation (rendered by components.js) -->
+    <div id="site-nav-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="hero hero-dark" style="min-height: 40vh;">
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="collections.hero.title">コレクション</h1>
+            <p class="hero-subtitle" data-i18n="collections.hero.subtitle">世界中の主要機関、美術館、組織および私人収集家による作品コレクション</p>
+        </div>
+    </section>
+
+    <!-- Collection Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label" data-i18n="collections.stats.academic">グローバル機関</div>
+                <div class="stat-label-en" data-i18n="collections.stats.academic.en">Global Institutions</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <div class="stat-label" data-i18n="collections.stats.royal">大陸</div>
+                <div class="stat-label-en" data-i18n="collections.stats.royal.en">Continents</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">30+</div>
+                <div class="stat-label" data-i18n="collections.stats.regions">国と地域</div>
+                <div class="stat-label-en" data-i18n="collections.stats.regions.en">Countries & Regions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section class="map-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="collections.map.title">グローバルコレクションマップ</h2>
+        </div>
+
+        <div class="map-container" id="mapContainer">
+            <svg class="world-map" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="4" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <filter id="glow-strong">
+                        <feGaussianBlur stdDeviation="6" result="blur"/>
+                        <feFlood flood-color="#d4af37" flood-opacity="0.4" result="color"/>
+                        <feComposite in="color" in2="blur" operator="in" result="colorBlur"/>
+                        <feMerge>
+                            <feMergeNode in="colorBlur"/>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <radialGradient id="dotGrad" cx="40%" cy="40%">
+                        <stop offset="0%" stop-color="#f5d97a"/>
+                        <stop offset="100%" stop-color="#d4af37"/>
+                    </radialGradient>
+                </defs>
+
+                <!-- Realistic continent outlines (filled) -->
+                <g class="continents">
+                    <!-- North America -->
+                    <path d="M100,55 L115,48 L140,42 L165,50 L185,55 L210,65 L225,78 L235,95 L240,115 L245,130 L250,145 L248,160 L240,175 L230,185 L215,195 L195,200 L180,195 L160,205 L145,215 L130,210 L120,200 L105,185 L100,175 L95,160 L88,145 L85,120 L88,100 L92,80 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Central America & Caribbean -->
+                    <path d="M160,205 L175,210 L190,220 L200,230 L210,235 L205,240 L195,238 L180,230 L165,220 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- South America -->
+                    <path d="M205,240 L220,235 L240,240 L258,255 L270,275 L278,300 L275,330 L268,355 L255,375 L240,390 L225,395 L215,385 L210,365 L205,340 L200,310 L195,285 L198,260 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Europe -->
+                    <path d="M430,60 L445,55 L460,58 L475,65 L488,70 L498,80 L505,95 L500,108 L492,118 L480,125 L468,132 L455,138 L445,142 L435,138 L425,130 L418,120 L415,108 L418,95 L422,80 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Iberian + Med -->
+                    <path d="M418,120 L425,130 L420,142 L412,148 L405,145 L400,135 L405,125 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Scandinavia -->
+                    <path d="M448,30 L455,25 L468,28 L475,38 L478,52 L475,65 L460,58 L452,45 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Africa -->
+                    <path d="M420,155 L440,148 L465,145 L490,150 L510,160 L525,175 L535,195 L540,220 L538,250 L530,280 L518,310 L505,335 L488,355 L470,365 L455,362 L442,350 L435,330 L430,305 L425,280 L420,255 L418,230 L415,205 L415,180 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Middle East -->
+                    <path d="M505,108 L525,105 L548,112 L560,125 L555,140 L542,148 L525,155 L510,160 L498,155 L492,145 L490,135 L492,118 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Russia / Central Asia -->
+                    <path d="M498,80 L530,68 L570,55 L620,45 L670,40 L720,42 L760,50 L780,60 L790,75 L785,90 L770,100 L748,108 L720,112 L680,110 L640,105 L600,100 L560,95 L530,90 L510,88 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- South Asia / India -->
+                    <path d="M600,130 L625,125 L648,130 L660,145 L665,165 L658,185 L645,200 L628,210 L612,205 L600,195 L592,180 L588,160 L590,145 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Southeast Asia -->
+                    <path d="M660,175 L680,170 L700,180 L715,195 L720,215 L712,230 L695,238 L678,235 L665,225 L658,210 L655,195 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- East Asia / China -->
+                    <path d="M660,90 L690,85 L720,88 L748,95 L770,100 L778,115 L775,130 L765,145 L748,155 L728,162 L710,165 L692,160 L678,150 L668,138 L660,125 L655,108 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Japan / Korea -->
+                    <path d="M778,100 L790,95 L798,102 L800,115 L795,128 L785,135 L778,130 L775,118 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Indonesia -->
+                    <path d="M700,248 L720,242 L745,245 L765,252 L780,260 L775,270 L758,272 L735,268 L715,262 L705,255 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Australia -->
+                    <path d="M755,320 L785,310 L815,312 L840,320 L858,335 L865,355 L858,375 L842,390 L820,398 L795,400 L772,395 L755,382 L748,365 L748,345 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- New Zealand -->
+                    <path d="M880,380 L888,375 L895,382 L892,395 L885,400 L878,395 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                    <!-- Greenland -->
+                    <path d="M290,20 L320,15 L345,22 L355,38 L348,55 L330,62 L310,58 L295,48 L288,35 Z" fill="#1f1f1f" stroke="#3a3a3a" stroke-width="0.8"/>
+                </g>
+
+                <!-- Connection arcs from Chengdu to collection cities -->
+                <g class="connections" opacity="0.15">
+                    <path d="M688,138 Q550,60 452,98" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q560,55 438,108" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q580,50 468,95" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q560,70 448,128" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q560,75 455,138" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q688,200 680,215" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q450,100 230,145" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                    <path d="M688,138 Q690,105 790,108" fill="none" stroke="#d4af37" stroke-width="0.8" stroke-dasharray="4,4"/>
+                </g>
+
+                <!-- Pulse rings (decorative) -->
+                <g class="pulse-rings">
+                    <circle cx="688" cy="138" r="15" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3">
+                        <animate attributeName="r" values="15;40;15" dur="4s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="688" cy="138" r="15" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3">
+                        <animate attributeName="r" values="15;40;15" dur="4s" begin="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" begin="2s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
+                <!-- Collection dots with outer ring -->
+                <g class="collection-dots">
+                    <!-- London, UK (RCA) -->
+                    <circle cx="452" cy="98" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="452" cy="98" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="London" data-label="ロイヤルカレッジオブアート · ロンドン"/>
+
+                    <!-- Paris, France -->
+                    <circle cx="438" cy="108" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="438" cy="108" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Paris" data-label="パリ高等美術学校 · パリ"/>
+
+                    <!-- Berlin, Germany -->
+                    <circle cx="468" cy="95" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="468" cy="95" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Berlin" data-label="UdKベルリン · ベルリン"/>
+
+                    <!-- Florence, Italy -->
+                    <circle cx="448" cy="128" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="448" cy="128" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Florence" data-label="フィレンツェ美術アカデミア · フィレンツェ"/>
+
+                    <!-- Rome, Italy -->
+                    <circle cx="455" cy="138" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="455" cy="138" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Rome" data-label="ローマ美術アカデミア · ローマ"/>
+
+                    <!-- Bangkok, Thailand -->
+                    <circle cx="680" cy="215" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="680" cy="215" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Bangkok" data-label="タイ王室コレクション · バンコク"/>
+
+                    <!-- New York, USA (UNESCO) -->
+                    <circle cx="230" cy="145" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="230" cy="145" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="NewYork" data-label="UNESCO · ニューヨーク"/>
+
+                    <!-- Chengdu, China (home base - larger) -->
+                    <circle cx="688" cy="138" r="16" fill="#d4af37" opacity="0.12"/>
+                    <circle class="collection-dot collection-dot--home" cx="688" cy="138" r="7" fill="url(#dotGrad)" filter="url(#glow-strong)" data-city="Chengdu" data-label="四川美術館 · 成都"/>
+
+                    <!-- Beijing, China (Olympics) -->
+                    <circle cx="710" cy="115" r="12" fill="#d4af37" opacity="0.15"/>
+                    <circle class="collection-dot" cx="710" cy="115" r="5" fill="url(#dotGrad)" filter="url(#glow)" data-city="Beijing" data-label="北京オリンピック委員会 · 北京"/>
+
+                </g>
+            </svg>
+
+            <!-- Tooltip -->
+            <div class="map-tooltip" id="mapTooltip"></div>
+            <div class="map-note" data-i18n="collections.map.note">光るドットをホバーして詳細を表示</div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="collections-grid">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="collections.featured.title">フィーチャーコレクション</h2>
+        </div>
+
+        <div class="collections-container">
+            <!-- Royal College of Art -->
+            <div class="collection-card">
+                <div class="card-number">01</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.rca.name">ロイヤルカレッジオブアート</h3>
+                    <p class="card-title-en" data-i18n="collections.rca.nameEn">Royal College of Art</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.rca.location">ロンドン、イギリス</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.rca.works">生命トーテムシリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.rca.description">世界ランク1のアート・デザイン大学。RCA買収は、グローバル学術主流からの最高レベルの認識を示しています。</p>
+                <p class="card-description-en" data-i18n="collections.rca.descriptionEn">Ranked #1 art and design university in the world. The RCA acquisition signifies the highest level of recognition from the global academic mainstream.</p>
+            </div>
+
+            <!-- Beaux-Arts de Paris -->
+            <div class="collection-card">
+                <div class="card-number">02</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.beauxarts.name">パリ高等美術学校</h3>
+                    <p class="card-title-en" data-i18n="collections.beauxarts.nameEn">Beaux-Arts de Paris</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.beauxarts.location">パリ、フランス</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.beauxarts.works">生命トーテムシリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.beauxarts.description">1648年創立、世界で最も古いアートアカデミーの一つ。ドラクロワ、モネ、ルノワールのアルマ・マター。</p>
+                <p class="card-description-en" data-i18n="collections.beauxarts.descriptionEn">Founded in 1648, one of the world's oldest art academies. Alma mater of Delacroix, Monet, and Renoir.</p>
+            </div>
+
+            <!-- UdK Berlin -->
+            <div class="collection-card">
+                <div class="card-number">03</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.udk.name">UdKベルリン</h3>
+                    <p class="card-title-en" data-i18n="collections.udk.nameEn">UdK Berlin</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.udk.location">ベルリン、ドイツ</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.udk.works">生命トーテムシリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.udk.description">ヨーロッパで最も名高いアート・デザイン大学の一つで、現代美術の革新と実験に献身しています。</p>
+                <p class="card-description-en" data-i18n="collections.udk.descriptionEn">One of Europe's most prestigious art and design universities, dedicated to contemporary art innovation and experimentation.</p>
+            </div>
+
+            <!-- Accademia di Belle Arti di Firenze -->
+            <div class="collection-card">
+                <div class="card-number">04</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.accademiafirenze.name">フィレンツェ美術アカデミア</h3>
+                    <p class="card-title-en" data-i18n="collections.accademiafirenze.nameEn">Accademia di Belle Arti di Firenze</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.accademiafirenze.location">フィレンツェ、イタリア</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.accademiafirenze.works">生命トーテムシリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.accademiafirenze.description">ルネッサンスの揺りかご、ミケランジェロのアルマ・マター。</p>
+                <p class="card-description-en" data-i18n="collections.accademiafirenze.descriptionEn">The cradle of the Renaissance, alma mater of Michelangelo.</p>
+            </div>
+
+            <!-- Accademia di Belle Arti di Roma -->
+            <div class="collection-card">
+                <div class="card-number">05</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.accademia roma.name">ローマ美術アカデミア</h3>
+                    <p class="card-title-en" data-i18n="collections.accademiaroma.nameEn">Accademia di Belle Arti di Roma</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.accademiaroma.location">ローマ、イタリア</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.accademiaroma.works">生命トーテムシリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.accademiaroma.description">ヨーロッパ美術教育の主要な聖殿で、古代ローマ美術の伝統を継続しています。</p>
+                <p class="card-description-en" data-i18n="collections.accademiaroma.descriptionEn">A major temple of European art education, continuing the traditions of ancient Roman art.</p>
+            </div>
+
+            <!-- Thai Royal Collection -->
+            <div class="collection-card">
+                <div class="card-number">06</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.thai.name">タイ王室コレクション</h3>
+                    <p class="card-title-en" data-i18n="collections.thai.nameEn">Thai Royal Collection</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.thai.location">バンコク、タイ</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.thai.works">厳選シリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.thai.description">東方騰弘が王室コレクションに初めて入選。タイの最高ランク大学のアート美術館であるチュラロンコーン大学によっても買収されました。</p>
+                <p class="card-description-en" data-i18n="collections.thai.descriptionEn">Dongfang Tenghong's first entry into a royal collection. Also acquired by Chulalongkorn University's art museum, Thailand's top-ranked institution.</p>
+            </div>
+
+            <!-- UNESCO Headquarters -->
+            <div class="collection-card">
+                <div class="card-number">07</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.unesco.name">UNESCO本部</h3>
+                    <p class="card-title-en" data-i18n="collections.unesco.nameEn">UNESCO Headquarters</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.unesco.location">ニューヨーク、アメリカ</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2005</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.unesco.works">重要なコレクション</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.unesco.description">UNの文化遺産保護機関で、芸術的選択と認証の最も厳格な基準を適用しています。</p>
+                <p class="card-description-en" data-i18n="collections.unesco.descriptionEn">The UN's cultural heritage protection body, applying the most rigorous standards of artistic selection and authentication.</p>
+            </div>
+
+            <!-- Beijing Olympic Committee -->
+            <div class="collection-card">
+                <div class="card-number">08</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.olympics.name">北京オリンピック委員会</h3>
+                    <p class="card-title-en" data-i18n="collections.olympics.nameEn">Beijing Olympic Committee</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.olympics.location">北京、中国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value">2008</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.olympics.works">行僧</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.olympics.description">「行僧」は著名な中国の画家を特徴とするセラミック美術の掛け板として製造され、世界のリーダーへの公式国家ギフトとして提示されました。</p>
+                <p class="card-description-en" data-i18n="collections.olympics.descriptionEn">"Wandering Monk" was produced as a ceramic art plaque featuring renowned Chinese painters, presented as an official state gift to world leaders.</p>
+            </div>
+
+            <!-- Sichuan Museum -->
+            <div class="collection-card">
+                <div class="card-number">09</div>
+                <div class="card-header">
+                    <h3 class="card-title" data-i18n="collections.sichuan.name">四川美術館</h3>
+                    <p class="card-title-en" data-i18n="collections.sichuan.nameEn">Sichuan Museum</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.location">場所</span>
+                        <span class="meta-value" data-i18n="collections.sichuan.location">成都、中国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.year">年</span>
+                        <span class="meta-value" data-i18n="collections.sichuan.year">常設コレクション</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label" data-i18n="collections.labels.works">作品</span>
+                        <span class="meta-value" data-i18n="collections.sichuan.works">複数の代表作</span>
+                    </div>
+                </div>
+                <p class="card-description" data-i18n="collections.sichuan.description">蜀文化の守護者で、彼の故郷で東方騰弘の芸術的成就を収集しています。</p>
+                <p class="card-description-en" data-i18n="collections.sichuan.descriptionEn">Guardian of Shu culture, collecting Dongfang Tenghong's artistic achievements in his birthplace.</p>
+            </div>
+
+            <!-- Chulalongkorn University -->
+            <div class="collection-card">
+                <div class="card-number">10</div>
+                <div class="card-header">
+                    <h3 class="card-title">チュラロンコーン大学美術館</h3>
+                    <p class="card-title-en">Chulalongkorn University Art Museum</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">場所</span>
+                        <span class="meta-value">バンコク、タイ</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">年</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">作品</span>
+                        <span class="meta-value">厳選シリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description">タイの最高ランク大学で、東南アジア現代美術の主要なハブとなるアート美術館を持っています。</p>
+                <p class="card-description-en">Thailand's top-ranked university, with an art museum that serves as a major hub for Southeast Asian contemporary art.</p>
+            </div>
+
+            <!-- Wanda Group -->
+            <div class="collection-card">
+                <div class="card-number">11</div>
+                <div class="card-header">
+                    <h3 class="card-title">ワンダグループ</h3>
+                    <p class="card-title-en">Wanda Group</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">場所</span>
+                        <span class="meta-value">中国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">年</span>
+                        <span class="meta-value">コーポレートコレクション</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">作品</span>
+                        <span class="meta-value">複数の作品</span>
+                    </div>
+                </div>
+                <p class="card-description">中国の著名なコーポレート美術コレクション、厳格な学術基準を使用して現代美術をキュレーションしています。</p>
+                <p class="card-description-en">One of China's premier corporate art collections, curating contemporary art with rigorous academic standards.</p>
+            </div>
+
+            <!-- International Olympic Committee -->
+            <div class="collection-card">
+                <div class="card-number">12</div>
+                <div class="card-header">
+                    <h3 class="card-title">国際オリンピック委員会</h3>
+                    <p class="card-title-en">International Olympic Committee</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">場所</span>
+                        <span class="meta-value">ローザンヌ、スイス</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">年</span>
+                        <span class="meta-value">2008</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">作品</span>
+                        <span class="meta-value">行僧プラーク</span>
+                    </div>
+                </div>
+                <p class="card-description">オリンピックの精神を通じて中国現代美術を世界の舞台へもたらしています。</p>
+                <p class="card-description-en">Bringing Chinese contemporary art to the world stage through the spirit of the Olympics.</p>
+            </div>
+
+            <!-- European Private Collectors -->
+            <div class="collection-card">
+                <div class="card-number">13</div>
+                <div class="card-header">
+                    <h3 class="card-title">ヨーロッパの私人コレクター</h3>
+                    <p class="card-title-en">European Private Collectors</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">地域</span>
+                        <span class="meta-value">イギリス、フランス、ドイツ、イタリアおよび他国</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">年</span>
+                        <span class="meta-value">継続的なコレクション</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">作品</span>
+                        <span class="meta-value">複数のシリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description">ヨーロッパ全域の確立されたコレクターが、アーティストのキャリアの様々な時期から継続的に作品を買収しています。</p>
+                <p class="card-description-en">Established collectors across Europe consistently acquire works from various periods of the artist's career.</p>
+            </div>
+
+            <!-- Asian Private Collectors -->
+            <div class="collection-card">
+                <div class="card-number">14</div>
+                <div class="card-header">
+                    <h3 class="card-title">アジア太平洋の私人コレクター</h3>
+                    <p class="card-title-en">Asia-Pacific Private Collectors</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">地域</span>
+                        <span class="meta-value">中国、日本、韓国、および東南アジア</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">年</span>
+                        <span class="meta-value">継続的なコレクション</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">作品</span>
+                        <span class="meta-value">様々なシリーズの代表作</span>
+                    </div>
+                </div>
+                <p class="card-description">アジア太平洋地域全域の積極的な現代美術コレクター、中国、日本、韓国、および東南アジアを含みます。</p>
+                <p class="card-description-en">Active contemporary art collectors across the Asia-Pacific region, including China, Japan, Korea, and Southeast Asia.</p>
+            </div>
+
+            <!-- North American Private Collectors -->
+            <div class="collection-card">
+                <div class="card-number">15</div>
+                <div class="card-header">
+                    <h3 class="card-title">北米の私人コレクター</h3>
+                    <p class="card-title-en">North American Private Collectors</p>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">地域</span>
+                        <span class="meta-value">アメリカとカナダ</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">年</span>
+                        <span class="meta-value">継続的なコレクション</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">作品</span>
+                        <span class="meta-value">複数のシリーズ</span>
+                    </div>
+                </div>
+                <p class="card-description">確立された北米のコレクターが継続的に代表作を買収し、ニューヨーク、ロサンゼルス、トロントを含むアート・ハブにまたがっています。</p>
+                <p class="card-description-en">Established North American collectors consistently acquire representative works, spanning art hubs including New York, Los Angeles, and Toronto.</p>
+            </div>
+        </div>
+
+        <!-- Collections Summary -->
+        <div class="collections-summary">
+            <p>上記は主要な収集機関の選択を代表しています。東方騰弘の作品は、世界中の多くの著名な美術館、ギャラリー、コーポレーション、および私人コレクターによっても収集されており、5大陸と30以上の国と地域に広がっています。</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title" data-i18n="collections.cta.title">完全なコレクションを探索</h2>
+            <p class="cta-subtitle" data-i18n="collections.cta.subtitle">すべての収集作品の詳細情報および高解像度画像を表示</p>
+            <a href="../works.html" class="cta-button" data-i18n="collections.cta.button">作品を表示</a>
+        </div>
+    </section>
+
+    <!-- Footer (rendered by components.js) -->
+    <div id="site-footer-placeholder"></div>
+
+    <!-- Styles for Collections Page -->
+    <style>
+        /* Stats Bar */
+        .stats-bar {
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 60px 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #d4af37;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label-en {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 80px;
+            background: #444;
+            margin: 0 40px;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: #0d0d0d;
+            padding: 80px 20px;
+        }
+
+        .map-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .world-map {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            margin-bottom: 20px;
+        }
+
+        .collection-dot {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: dot-pulse 3s ease-in-out infinite;
+        }
+
+        .collection-dot:hover {
+            r: 9;
+        }
+
+        .collection-dot--home {
+            animation: dot-pulse-home 2.5s ease-in-out infinite;
+        }
+
+        .collection-dot--home:hover {
+            r: 11;
+        }
+
+        @keyframes dot-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.65; }
+        }
+
+        @keyframes dot-pulse-home {
+            0%, 100% { opacity: 1; filter: url(#glow-strong); }
+            50% { opacity: 0.75; }
+        }
+
+        .map-tooltip {
+            position: absolute;
+            background: rgba(20,20,20,0.95);
+            border: 1px solid #d4af37;
+            color: #f0e6c0;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 3px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            white-space: nowrap;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.2);
+        }
+
+        .map-tooltip.active {
+            opacity: 1;
+        }
+
+        .map-note {
+            text-align: center;
+            color: #666;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        /* Collections Grid */
+        .collections-grid {
+            background: #0d0d0d;
+            padding: 80px 20px;
+        }
+
+        .collections-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1000px) {
+            .collections-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .collections-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .collection-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 22px;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .collection-card:hover {
+            border-top-color: #d4af37;
+            border-top-width: 3px;
+            padding-top: 20px;
+            transform: translateY(-4px);
+        }
+
+        .card-number {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .card-header {
+            margin-bottom: 14px;
+        }
+
+        .card-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 4px 0;
+        }
+
+        .card-title-en {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            color: #d4af37;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #333;
+        }
+
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .meta-label {
+            color: #999;
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 500;
+        }
+
+        .meta-value {
+            color: #d4af37;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .card-description {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #ccc;
+            margin: 0 0 8px 0;
+        }
+
+        .card-description-en {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: #999;
+            margin: 0;
+            font-style: italic;
+        }
+
+        .collections-summary {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        .collections-summary p {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+
+    <!-- Unified Scripts -->
+    <script src="../js/components.min.js"></script>
+    <script src="../js/i18n.min.js"></script>
+    <script src="../js/main.min.js"></script>
+</body>
+</html>
