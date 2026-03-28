@@ -2684,16 +2684,22 @@ select.form-input {
 /* Collections Grid */
 .collections-container {
   padding: var(--space-3xl) 0;
-}
-
-.collections-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 900px) {
-  .collections-grid {
+  .collections-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .collections-container {
     grid-template-columns: 1fr;
   }
 }
