@@ -2962,18 +2962,15 @@ select.form-input {
 }
 
 .highlight-card--horizontal .card-image {
-  flex: 0 0 400px;
+  flex: 0 0 45%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: var(--deep);
 }
 
 .highlight-card--horizontal .card-image img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  display: block;
 }
 
 .highlight-card--horizontal .card-content {
