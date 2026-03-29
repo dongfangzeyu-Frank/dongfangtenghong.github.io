@@ -1974,8 +1974,8 @@ a:hover {
 
 .lightbox-content img,
 .lightbox-image {
-  max-width: 90vw;
-  max-height: 75vh;
+  max-width: 88vw;
+  max-height: 70vh;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -2031,8 +2031,13 @@ a:hover {
 }
 
 .lightbox-info {
-  padding: var(--space-lg);
+  position: fixed;
+  bottom: 36px;
+  left: 0;
+  right: 0;
+  padding: var(--space-sm) var(--space-lg);
   text-align: center;
+  z-index: 210;
 }
 
 .lightbox-container {
@@ -2080,12 +2085,12 @@ a:hover {
 
 .lightbox-counter {
   position: fixed;
-  bottom: var(--space-xl);
+  bottom: var(--space-sm);
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-label);
-  font-size: 12px;
-  color: var(--fog);
+  font-size: 11px;
+  color: var(--ash);
   letter-spacing: 0.1em;
   z-index: 210;
 }
