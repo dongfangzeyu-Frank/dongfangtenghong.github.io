@@ -1,45 +1,648 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Index / Home Page -->
   <url>
     <loc>https://dongfangtenghong.com/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/"/>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- English Index -->
+  <url>
+    <loc>https://dongfangtenghong.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Spanish Index -->
+  <url>
+    <loc>https://dongfangtenghong.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- French Index -->
+  <url>
+    <loc>https://dongfangtenghong.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Japanese Index -->
+  <url>
+    <loc>https://dongfangtenghong.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Korean Index -->
+  <url>
+    <loc>https://dongfangtenghong.com/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Works Page -->
   <url>
     <loc>https://dongfangtenghong.com/works.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/works.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/works.html"/>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://dongfangtenghong.com/en/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/works.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/works.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/es/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/works.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/works.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/fr/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/works.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/works.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ja/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/works.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/works.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ko/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/works.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/works.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
     <loc>https://dongfangtenghong.com/about.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/about.html"/>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://dongfangtenghong.com/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/about.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/es/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/about.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/fr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/about.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ja/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/about.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ko/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/about.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Exhibitions Page -->
   <url>
     <loc>https://dongfangtenghong.com/exhibitions.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://dongfangtenghong.com/en/exhibitions.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/es/exhibitions.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/fr/exhibitions.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ja/exhibitions.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ko/exhibitions.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/exhibitions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/exhibitions.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- News Page -->
+  <url>
     <loc>https://dongfangtenghong.com/news.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/news.html"/>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://dongfangtenghong.com/en/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/news.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/es/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/news.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/fr/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/news.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ja/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/news.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ko/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/news.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Collections Page -->
+  <url>
     <loc>https://dongfangtenghong.com/collections.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/collections.html"/>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://dongfangtenghong.com/en/collections.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/collections.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/es/collections.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/collections.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/fr/collections.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/collections.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ja/collections.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/collections.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ko/collections.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/collections.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/collections.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Memories Page -->
+  <url>
+    <loc>https://dongfangtenghong.com/memories.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/memories.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/en/memories.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/memories.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/es/memories.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/memories.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/fr/memories.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/memories.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ja/memories.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/memories.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ko/memories.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/memories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/memories.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
     <loc>https://dongfangtenghong.com/contact.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/contact.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/contact.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/es/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/contact.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/contact.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ja/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/contact.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dongfangtenghong.com/ko/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://dongfangtenghong.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dongfangtenghong.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dongfangtenghong.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dongfangtenghong.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dongfangtenghong.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dongfangtenghong.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dongfangtenghong.com/contact.html"/>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

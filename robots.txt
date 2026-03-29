@@ -1,16 +1,9 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://dongfangtenghong.com/sitemap.xml
 
-# Block admin page
-Disallow: /admin.html
+User-agent: Baiduspider
+Allow: /
 
-# Block reference documents
-Disallow: /资料/
-Disallow: /2026/
-Disallow: /东方腾弘完整艺术简历.md.docx
-Disallow: /东方腾弘艺术年表.docx
-Disallow: /东方腾弘艺术评论深度分析.pdf
-Disallow: /艺术评论：静默的雷霆——重读东方腾弘.md.docx
-Disallow: /东方腾弘官网研发方案.html
+User-agent: Googlebot
+Allow: /
