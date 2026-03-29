@@ -709,6 +709,7 @@ a:hover {
 .hero-contact {
   position: relative;
   height: 100vh;
+  height: 100svh; /* iOS Safari: accounts for dynamic address bar */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1967,6 +1968,7 @@ a:hover {
   position: relative;
   max-width: 90vw;
   max-height: 80vh;
+  max-height: 80svh; /* iOS Safari */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1976,6 +1978,7 @@ a:hover {
 .lightbox-image {
   max-width: 88vw;
   max-height: 70vh;
+  max-height: 70svh; /* iOS Safari */
   width: auto;
   height: auto;
   object-fit: contain;
@@ -3677,5 +3680,124 @@ select.form-input {
   /* Gallery items: tighter spacing */
   .gallery-item {
     margin-bottom: 16px;
+  }
+
+  /* News horizontal cards: stack vertically */
+  .highlight-card--horizontal .card-content {
+    padding: var(--space-lg);
+  }
+
+  /* Contact category cards: reduce padding */
+  .category-card {
+    padding: var(--space-lg);
+  }
+
+  .card-icon {
+    font-size: 24px;
+  }
+
+  /* Hero: reduce height for non-home pages */
+  .page-hero,
+  .about-hero,
+  .exhibitions-hero {
+    min-height: auto;
+  }
+
+  /* Footer: improve mobile layout */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xl);
+  }
+
+  /* CTA section: tighter on mobile */
+  .cta-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .cta-title {
+    font-size: 22px;
+  }
+}
+
+/* ============================================================================
+   SMALL SCREEN (375px and below) — iPhone SE, compact phones
+   ============================================================================ */
+@media (max-width: 375px) {
+  /* Hero title even smaller */
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .page-hero-title {
+    font-size: 20px;
+  }
+
+  .hero-subtitle,
+  .page-hero-subtitle {
+    font-size: 12px;
+  }
+
+  /* Statement quote: more compact */
+  .statement-quote {
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 0 var(--space-sm);
+  }
+
+  /* Stats bar: smaller numbers */
+  .stat-number {
+    font-size: 28px;
+  }
+
+  /* Collection cards: reduce padding */
+  .collection-card {
+    padding: var(--space-lg);
+  }
+
+  .card-number {
+    font-size: 20px;
+  }
+
+  /* Contact form: full width */
+  .contact-form {
+    padding: 0 var(--space-sm);
+  }
+
+  /* Lightbox: maximize image space */
+  .lightbox-content img,
+  .lightbox-image {
+    max-width: 95vw;
+    max-height: 55vh;
+    max-height: 55svh;
+  }
+
+  .lightbox-info {
+    bottom: 24px;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .lightbox-info h2 {
+    font-size: 13px;
+  }
+
+  .lightbox-info p {
+    font-size: 10px;
+  }
+
+  /* News cards: tighter */
+  .news-card-body {
+    padding: var(--space-md);
+  }
+
+  /* Section padding reduction */
+  .news-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  /* Exhibition items: stack */
+  .exhibition-item {
+    flex-direction: column;
+    gap: var(--space-xs);
   }
 }
