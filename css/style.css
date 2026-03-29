@@ -2031,13 +2031,14 @@ a:hover {
 }
 
 .lightbox-info {
-  position: fixed;
+  position: absolute;
   bottom: 36px;
   left: 0;
   right: 0;
   padding: var(--space-sm) var(--space-lg);
   text-align: center;
   z-index: 210;
+  pointer-events: none;
 }
 
 .lightbox-container {
@@ -2084,7 +2085,7 @@ a:hover {
 }
 
 .lightbox-counter {
-  position: fixed;
+  position: absolute;
   bottom: var(--space-sm);
   left: 50%;
   transform: translateX(-50%);

@@ -166,11 +166,6 @@ function initGalleryLightbox() {
             <div class="spinner-ring"></div>
           </div>
           <img id="lightboxImage" src="" alt="">
-
-          <div class="lightbox-info">
-            <h2 id="lightboxTitle"></h2>
-            <p id="lightboxDescription"></p>
-          </div>
         </div>
 
         <div class="lightbox-nav">
@@ -184,6 +179,11 @@ function initGalleryLightbox() {
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
+        </div>
+
+        <div class="lightbox-info">
+          <h2 id="lightboxTitle"></h2>
+          <p id="lightboxDescription"></p>
         </div>
 
         <div class="lightbox-counter">
