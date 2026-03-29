@@ -227,10 +227,12 @@ function initGalleryLightbox() {
     const titleEl = item.querySelector('.gallery-item-title');
     const yearEl = item.querySelector('.gallery-item-year');
     const mediumEl = item.querySelector('.gallery-item-medium');
+    const dimensionsEl = item.querySelector('.gallery-item-dimensions');
     const title = titleEl ? titleEl.textContent : (item.getAttribute('data-title') || '');
     const description = [
       yearEl ? yearEl.textContent : '',
-      mediumEl ? mediumEl.textContent : ''
+      mediumEl ? mediumEl.textContent : '',
+      dimensionsEl ? dimensionsEl.textContent : ''
     ].filter(Boolean).join(' · ') || (item.getAttribute('data-description') || '');
 
     // Determine best image source: data-full (lg WebP) > original src
