@@ -3628,3 +3628,54 @@ select.form-input {
     padding: var(--space-3xl) 0;
   }
 }
+
+/* ============================================================================
+   MOBILE OPTIMIZATION — Lightbox, Gallery, Typography
+   ============================================================================ */
+@media (max-width: 768px) {
+  /* Lightbox: close button closer to edge */
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Lightbox: nav arrows smaller */
+  .lightbox-prev,
+  .lightbox-next {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Lightbox: info bar compact on mobile */
+  .lightbox-info {
+    bottom: 28px;
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  .lightbox-info h2 {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .lightbox-info p {
+    font-size: 11px;
+  }
+
+  .lightbox-counter {
+    bottom: 6px;
+    font-size: 10px;
+  }
+
+  /* Statement quote on about/home pages */
+  .statement-quote {
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  /* Gallery items: tighter spacing */
+  .gallery-item {
+    margin-bottom: 16px;
+  }
+}
