@@ -458,21 +458,49 @@
         background: rgba(200, 169, 110, 0.1);
       }
 
-      /* Show overlay always on mobile (no hover on touch) */
+      /* Show overlay always on mobile — thin bottom strip only */
       .gallery-item-overlay {
         opacity: 1;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
-        padding: 16px;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+        padding: 8px 10px;
+        pointer-events: none;
       }
 
       .gallery-item-title {
-        font-size: 14px;
-        margin-bottom: 4px;
+        font-size: 12px;
+        margin-bottom: 2px;
       }
 
       .gallery-item-meta {
-        font-size: 10px;
-        gap: 8px;
+        font-size: 9px;
+        gap: 6px;
+      }
+
+      /* Lightbox info visible on mobile */
+      .lightbox-content {
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .lightbox-content img,
+      .lightbox-image {
+        max-height: 65vh;
+      }
+
+      .lightbox-info {
+        padding: 10px 16px;
+      }
+
+      .lightbox-info h2 {
+        font-size: 15px;
+      }
+
+      .lightbox-info p {
+        font-size: 12px;
       }
 
       .gallery-section {
